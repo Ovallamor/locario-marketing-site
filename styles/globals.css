@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===================================
+   CSS VARIABLES - LOCARIO DESIGN SYSTEM
+   =================================== */
+:root {
+  --locario-bg: #050816;
+  --locario-bg-soft: #0B1020;
+  --locario-card: rgba(255, 255, 255, 0.08);
+  --locario-border: rgba(255, 255, 255, 0.12);
+  --locario-primary: #6C63FF;
+  --locario-secondary: #00D4FF;
+  --locario-accent: #22C55E;
+  --locario-text: #FFFFFF;
+  --locario-muted: #A1A1AA;
+  --locario-warm: #F59E0B;
+}
+
+/* ===================================
+   BASE STYLES
+   =================================== */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--locario-bg);
+    color: var(--locario-text);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Scrollbar dark custom */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--locario-bg-soft);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(108, 99, 255, 0.4);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(108, 99, 255, 0.7);
+  }
+
+  /* Focus styles accessibili */
+  *:focus-visible {
+    outline: 2px solid var(--locario-primary);
+    outline-offset: 2px;
+  }
+
+  /* Selection */
+  ::selection {
+    background: rgba(108, 99, 255, 0.3);
+    color: white;
+  }
+}
+
+/* ===================================
+   UTILITY CLASSES
+   =================================== */
+@layer components {
+  /* Glassmorphism card */
+  .glass {
+    background: var(--locario-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--locario-border);
+  }
+
+  /* Testo gradiente primary → secondary */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--locario-primary), var(--locario-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Variante warm gradient */
+  .gradient-text-warm {
+    background: linear-gradient(135deg, var(--locario-warm), var(--locario-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Bottone gradiente primario */
+  .btn-primary {
+    background: linear-gradient(135deg, var(--locario-primary), var(--locario-secondary));
+    color: white;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .btn-primary:hover::before {
+    opacity: 1;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 32px rgba(108, 99, 255, 0.4);
+  }
+
+  /* Bottone outline */
+  .btn-outline {
+    border: 1px solid var(--locario-border);
+    color: white;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(8px);
+  }
+
+  .btn-outline:hover {
+    border-color: rgba(108, 99, 255, 0.5);
+    background: rgba(108, 99, 255, 0.1);
+  }
+
+  /* Card con glow hover */
+  .card-glow:hover {
+    box-shadow: 0 0 30px rgba(108, 99, 255, 0.15);
+    border-color: rgba(108, 99, 255, 0.3);
+  }
+
+  /* Section spacing */
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+    }
+  }
+
+  /* Gradient border card */
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--locario-primary), var(--locario-secondary));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+/* ===================================
+   KEYFRAME ANIMATIONS
+   =================================== */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-15px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(-8px) rotate(-1deg);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* prefers-reduced-motion: rispetta le preferenze di sistema */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
