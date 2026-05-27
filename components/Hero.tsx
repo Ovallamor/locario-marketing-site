@@ -31,7 +31,7 @@ const spheres = [
 export const Hero = () => {
   return (
     <section
-      className="relative min-h-screen flex items-center overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center overflow-x-hidden pt-20"
       style={{ background: '#050816' }}
     >
       {/* Gradiente radiale centrale */}
@@ -65,9 +65,9 @@ export const Hero = () => {
 
       {/* Contenuto principale */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center w-full min-w-0">
           {/* Colonna sinistra: copy */}
-          <div>
+          <div className="min-w-0 w-full">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -90,7 +90,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6"
+              className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight tracking-tight mb-6"
             >
               Il gestionale prenotazioni che ti mostra{' '}
               <span

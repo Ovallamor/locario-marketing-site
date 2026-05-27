@@ -176,7 +176,7 @@ export const PricingCards = ({ showNote = true, showToggle = true }: PricingCard
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="flex items-center justify-center gap-4 mb-14"
+            className="flex flex-wrap items-center justify-center gap-3 mb-14"
           >
             <span
               className="text-sm font-medium"
@@ -208,7 +208,7 @@ export const PricingCards = ({ showNote = true, showToggle = true }: PricingCard
             >
               Annuale
               <span
-                className="ml-2 text-xs font-bold px-2 py-0.5 rounded-full"
+                className="ml-1 text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap"
                 style={{
                   background: 'rgba(245, 158, 11, 0.15)',
                   color: '#F59E0B',
