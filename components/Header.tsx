@@ -173,11 +173,18 @@ export const Header = () => {
               {/* Hamburger mobile */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="lg:hidden p-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+                className="lg:hidden flex items-center justify-center rounded-xl text-white transition-colors"
+                style={{
+                  width: 48,
+                  height: 48,
+                  background: 'rgba(255,255,255,0.08)',
+                  border: '1px solid rgba(255,255,255,0.15)',
+                  flexShrink: 0,
+                }}
                 aria-label={isMenuOpen ? 'Chiudi menu' : 'Apri menu'}
                 aria-expanded={isMenuOpen}
               >
-                {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
           </div>
@@ -246,7 +253,7 @@ export const Header = () => {
                   <p className="px-4 pt-6 pb-2 text-xs font-semibold uppercase tracking-wider text-white/40">
                     Settori
                   </p>
-                  {INDUSTRY_NAV.map((item, i) => (
+                  {INDUSTRY_NAV.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}

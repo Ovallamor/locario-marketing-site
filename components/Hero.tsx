@@ -31,7 +31,7 @@ const spheres = [
 export const Hero = () => {
   return (
     <section
-      className="relative min-h-screen flex items-center overflow-x-hidden pt-20"
+      className="relative min-h-screen flex items-start lg:items-center overflow-x-hidden pt-20"
       style={{ background: '#050816' }}
     >
       {/* Gradiente radiale centrale */}
@@ -64,7 +64,7 @@ export const Hero = () => {
       ))}
 
       {/* Contenuto principale */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 lg:py-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full py-8 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center w-full min-w-0">
           {/* Colonna sinistra: copy */}
           <div className="min-w-0 w-full">
@@ -198,12 +198,12 @@ export const Hero = () => {
             <ProductMockup3D />
           </motion.div>
 
-          {/* Mockup mobile (solo su mobile) */}
+          {/* Mockup mobile — nascosto su mobile piccolo, visibile da sm in su */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="lg:hidden"
+            className="hidden sm:block lg:hidden"
           >
             <ProductMockup3D />
           </motion.div>
