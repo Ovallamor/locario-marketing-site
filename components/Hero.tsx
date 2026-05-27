@@ -73,7 +73,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 lg:mb-8"
               style={{
                 background: 'rgba(108, 99, 255, 0.12)',
                 border: '1px solid rgba(108, 99, 255, 0.3)',
@@ -111,7 +111,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg leading-relaxed mb-8 max-w-xl"
+              className="text-base lg:text-lg leading-relaxed mb-5 lg:mb-8 max-w-xl"
               style={{ color: '#A1A1AA' }}
             >
               Con Locario gestisci prenotazioni, clienti e richieste da Google, sito, social e campagne
@@ -123,7 +123,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap gap-4 mb-10"
+              className="flex flex-wrap gap-3 mb-5 lg:mb-10"
             >
               <Link
                 href={LINKS.trial}
@@ -198,12 +198,13 @@ export const Hero = () => {
             <ProductMockup3D />
           </motion.div>
 
-          {/* Mockup mobile — nascosto su mobile piccolo, visibile da sm in su */}
+          {/* Mockup mobile */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="hidden sm:block lg:hidden"
+            className="lg:hidden"
+            style={{ transform: 'scale(0.85)', transformOrigin: 'top center' }}
           >
             <ProductMockup3D />
           </motion.div>
