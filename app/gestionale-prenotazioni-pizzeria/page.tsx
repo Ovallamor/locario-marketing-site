@@ -34,7 +34,7 @@ const solutionPointsPizzeria = [
   'Sala e asporto gestiti separatamente, ognuno con le sue disponibilità e regole',
   'Prenotazioni gruppi con campo numero persone, note e gestione tavoli multipli',
   'Link tracciato per ogni canale: WhatsApp prenotazioni, Google Business, Instagram',
-  'Dashboard con dati sui giorni deboli: capisce quando fare offerte mirate',
+  'Dashboard con dati sui giorni deboli: capisci quando e dove fare offerte mirate',
   'Storico clienti con preferenze, allergie e frequenza delle visite',
   'Promemoria automatici che riducono i no-show del weekend',
 ]

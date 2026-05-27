@@ -149,7 +149,7 @@ export default function GestionaleCentroEsteticoPage() {
                 backgroundClip: 'text',
               }}
             >
-              hanno un dato da cui partire
+              hanno un dato di ritorno
             </span>
           </h2>
           <p className="text-lg max-w-2xl mx-auto mb-12" style={{ color: '#A1A1AA' }}>

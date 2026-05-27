@@ -248,7 +248,7 @@ export default function FunzionalitaPage() {
             </h2>
 
             <p className="text-lg max-w-2xl mx-auto" style={{ color: '#A1A1AA' }}>
-              Non numeri per i numeri. Dashboard pensata per rispondere alle domande che ti fai ogni
+              Non numeri fini a se stessi. Una dashboard pensata per rispondere alle domande che ti fai ogni
               lunedì mattina quando guardi la settimana che arriva.
             </p>
           </div>
@@ -285,7 +285,7 @@ export default function FunzionalitaPage() {
                 desc: 'Trend settimanale e mensile per capire se stai crescendo o calando.',
                 color: '#14B8A6',
               },
-            ].map((item, i) => (
+            ].map((item) => (
               <div
                 key={item.title}
                 className="rounded-2xl p-5"

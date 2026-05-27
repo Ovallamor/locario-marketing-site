@@ -37,7 +37,7 @@ const solutionPoints = [
   'Agenda digitale con ogni operatore, servizi assegnati e disponibilità in tempo reale',
   'Gestione operatori con orari personalizzati e calendario separato per ognuno',
   'Promemoria automatici ai clienti: -70% di no-show in media',
-  'Cliente con preferenze salvate: stylist preferito, note, storico servizi',
+  'Scheda cliente con preferenze salvate: stylist preferito, note e storico servizi',
   'Dashboard che mostra quante prenotazioni arrivano da Instagram vs Google vs sito',
 ]
 

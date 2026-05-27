@@ -5,7 +5,7 @@ import { generateMetadata as genMeta } from '@/lib/seo'
 import { TrackingSources } from '@/components/TrackingSources'
 import { TrialCTA } from '@/components/TrialCTA'
 import Link from 'next/link'
-import { ArrowRight, Check, Clock, Smartphone, BarChart3 } from 'lucide-react'
+import { ArrowRight, Clock, Smartphone, BarChart3 } from 'lucide-react'
 import { LINKS } from '@/lib/constants'
 
 export const metadata: Metadata = genMeta({
@@ -195,7 +195,7 @@ export default function PrenotazioniOnlinePage() {
             Prenotazioni online per ogni settore
           </h2>
           <p className="text-base mb-8" style={{ color: '#A1A1AA' }}>
-            Che tu gestisca un ristorante, un parrucchiere o un centro estetico, il sistema si
+            Che tu gestisca un ristorante, un salone o un centro estetico, il sistema si
             adatta al tuo flusso di lavoro.
           </p>
           <div className="flex flex-wrap justify-center gap-3">

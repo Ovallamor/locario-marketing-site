@@ -159,7 +159,7 @@ export default function ComeFunzionaPage() {
           </h2>
           <p className="text-lg max-w-2xl mx-auto mb-12" style={{ color: '#A1A1AA' }}>
             Non devi essere tech. Non devi sapere come funziona un server. Non devi installare niente.
-            Locario è pensato per chi gestisce una attività, non per chi fa l&apos;informatico.
+            Locario è pensato per chi gestisce un&apos;attività, non per chi fa l&apos;informatico.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">

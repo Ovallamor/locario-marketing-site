@@ -34,7 +34,7 @@ const features = [
   },
   {
     title: 'Canale di acquisizione',
-    desc: 'Sai da dove è arrivato ogni cliente la prima volta: Google, Instagram, QR code o passa-parola.',
+    desc: 'Sai da dove è arrivato ogni cliente la prima volta: Google, Instagram, QR code o passaparola.',
     color: '#22C55E',
   },
   {
