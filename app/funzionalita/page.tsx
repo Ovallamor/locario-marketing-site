@@ -130,7 +130,7 @@ export default function FunzionalitaPage() {
                   'Note e preferenze personali del cliente',
                   'Canale di acquisizione registrato automaticamente',
                   'Frequenza delle visite e ultima presenza',
-                  'Richieste speciali e allergie (utile per spa e ristorazione)',
+                  'Richieste speciali e allergie (utili per spa e ristorazione)',
                 ].map((point) => (
                   <li key={point} className="flex items-start gap-3">
                     <div
@@ -174,7 +174,7 @@ export default function FunzionalitaPage() {
                 </div>
                 <div>
                   <p className="text-lg font-bold text-white">Giulia Bianchi</p>
-                  <p className="text-sm" style={{ color: '#A1A1AA' }}>Cliente dal 12 Marzo 2024</p>
+                  <p className="text-sm" style={{ color: '#A1A1AA' }}>Cliente dal 12 marzo 2024</p>
                 </div>
                 <div
                   className="ml-auto px-3 py-1 rounded-full text-xs font-semibold"
@@ -187,7 +187,7 @@ export default function FunzionalitaPage() {
               <div className="grid grid-cols-2 gap-4 mb-6">
                 {[
                   { label: 'Prenotazioni totali', value: '18' },
-                  { label: 'Ultimo appuntamento', value: '20 Mag' },
+                  { label: 'Ultimo appuntamento', value: '20 mag' },
                   { label: 'Canale acquisizione', value: 'Instagram' },
                   { label: 'Frequenza media', value: '2x/mese' },
                 ].map((stat) => (
@@ -248,7 +248,7 @@ export default function FunzionalitaPage() {
             </h2>
 
             <p className="text-lg max-w-2xl mx-auto" style={{ color: '#A1A1AA' }}>
-              Non numeri fini a se stessi. Una dashboard pensata per rispondere alle domande che ti fai ogni
+              Non numeri fini a sé stessi. Una dashboard pensata per rispondere alle domande che ti fai ogni
               lunedì mattina quando guardi la settimana che arriva.
             </p>
           </div>

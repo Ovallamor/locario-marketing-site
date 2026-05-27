@@ -202,7 +202,7 @@ export default function GestioneClientiPage() {
                   <div>
                     <p className="text-lg font-bold text-white">Marco Ferretti</p>
                     <p className="text-sm" style={{ color: '#A1A1AA' }}>
-                      Cliente fedele · Dal 2 Gennaio 2024
+                      Cliente fedele · Dal 2 gennaio 2024
                     </p>
                   </div>
                   <div
@@ -221,7 +221,7 @@ export default function GestioneClientiPage() {
               >
                 {[
                   { value: '28', label: 'Prenotazioni' },
-                  { value: 'Mar', label: 'Ultima visita' },
+                  { value: 'mar', label: 'Ultima visita' },
                   { value: 'Google', label: 'Canale arrivo' },
                 ].map((s, i) => (
                   <div
@@ -242,9 +242,9 @@ export default function GestioneClientiPage() {
                 </p>
                 <div className="space-y-3">
                   {[
-                    { service: 'Taglio Classico', date: '22 Mar 2026', operator: 'Luca' },
-                    { service: 'Barba + Taglio', date: '5 Mar 2026', operator: 'Luca' },
-                    { service: 'Taglio Classico', date: '20 Feb 2026', operator: 'Luca' },
+                    { service: 'Taglio Classico', date: '22 mar 2026', operator: 'Luca' },
+                    { service: 'Barba + Taglio', date: '5 mar 2026', operator: 'Luca' },
+                    { service: 'Taglio Classico', date: '20 feb 2026', operator: 'Luca' },
                   ].map((appt) => (
                     <div
                       key={appt.date}

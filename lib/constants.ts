@@ -159,7 +159,7 @@ export const INDUSTRIES: Industry[] = [
     subtitle: 'Appuntamenti digitali, storico clienti e promemoria',
     painPoints: [
       'Appuntamenti gestiti via email o telefono',
-      'Nessuno storico consultazioni strutturato',
+      'Nessun storico consultazioni strutturato',
       'Difficoltà a ricordare le preferenze dei clienti',
       'Nessun dato su quali canali portano nuovi pazienti',
     ],

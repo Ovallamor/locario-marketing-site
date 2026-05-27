@@ -119,7 +119,7 @@ export const ProductMockup3D = () => {
               <p className="text-xs font-medium" style={{ color: '#A1A1AA' }}>
                 Dashboard Locario
               </p>
-              <p className="text-sm font-semibold text-white">27 Maggio 2026</p>
+              <p className="text-sm font-semibold text-white">27 maggio 2026</p>
             </div>
             {/* Status badge */}
             <div

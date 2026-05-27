@@ -29,7 +29,7 @@ const painPoints = [
   'Messaggi dispersi tra chat, telefonate e note scritte a mano',
   'Nessuna idea di quale canale porta più tavoli ogni settimana',
   'Giorni deboli (lunedì, martedì) che non riesci a riempire',
-  'Nessuno storico clienti utile per fare marketing mirato',
+  'Nessun storico clienti utile per fare marketing mirato',
 ]
 
 const solutionPoints = [
@@ -50,7 +50,7 @@ const faqRistorante: FAQItem[] = [
   {
     question: 'Posso gestire più turni di servizio (pranzo e cena)?',
     answer:
-      'Assolutamente. Locario supporta la gestione di turni multipli nello stesso giorno. Configuri la durata di ogni turno, il numero massimo di tavoli per turno, e il sistema gestisce automaticamente le disponibilità per pranzo, cena o altri momenti.',
+      'Assolutamente. Locario supporta la gestione di turni multipli nello stesso giorno. Configura la durata di ogni turno, il numero massimo di tavoli per turno, e il sistema gestisce automaticamente le disponibilità per pranzo, cena o altri momenti.',
   },
   {
     question: 'Come funziona il tracciamento da Google Business Profile?',
@@ -65,7 +65,7 @@ const faqRistorante: FAQItem[] = [
   {
     question: 'Come riduco i no-show nei weekend?',
     answer:
-      'Attivi i promemoria automatici: il sistema manda un messaggio al cliente 24 ore e/o 2 ore prima della prenotazione. Questo riduce significativamente le assenze, soprattutto nel weekend quando le persone hanno più impegni.',
+      'Attiva i promemoria automatici: il sistema manda un messaggio al cliente 24 ore e/o 2 ore prima della prenotazione. Questo riduce significativamente le assenze, soprattutto nel weekend quando le persone hanno più impegni.',
   },
 ]
 

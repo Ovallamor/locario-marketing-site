@@ -162,7 +162,7 @@ export default function GestionaleCentroEsteticoPage() {
             {[
               {
                 title: 'Prima della promozione',
-                desc: 'Crei un link tracciato per la campagna su Instagram e uno per la newsletter.',
+                desc: 'Crea un link tracciato per la campagna su Instagram e uno per la newsletter.',
                 color: '#6C63FF',
               },
               {
