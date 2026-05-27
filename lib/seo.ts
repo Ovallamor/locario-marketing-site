@@ -97,7 +97,7 @@ export const organizationSchema = {
   name: 'Locario',
   url: LINKS.siteUrl,
   email: LINKS.email,
-  description: 'Gestionale prenotazioni online per attività locali con tracking canali di acquisizione',
+  description: 'Gestionale delle prenotazioni online per attività locali con tracking dei canali di acquisizione',
   logo: {
     '@type': 'ImageObject',
     url: `${LINKS.siteUrl}/logo.png`,
@@ -111,7 +111,7 @@ export const softwareApplicationSchema = {
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
   description:
-    'Gestionale prenotazioni per attività locali con tracking dei canali di acquisizione. Ristoranti, parrucchieri, centri estetici e studi professionali.',
+    'Gestionale delle prenotazioni per attività locali con tracking dei canali di acquisizione. Ristoranti, parrucchieri, centri estetici e studi professionali.',
   offers: {
     '@type': 'Offer',
     price: '0',
@@ -127,7 +127,7 @@ export const websiteSchema = {
   '@type': 'WebSite',
   name: 'Locario',
   url: LINKS.siteUrl,
-  description: 'Gestionale prenotazioni per attività locali',
+  description: 'Gestionale delle prenotazioni per attività locali',
   potentialAction: {
     '@type': 'SearchAction',
     target: {

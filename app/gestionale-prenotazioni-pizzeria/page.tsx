@@ -10,7 +10,7 @@ import { LINKS } from '@/lib/constants'
 export const metadata: Metadata = genMeta({
   title: 'Gestionale Prenotazioni Pizzeria | Locario',
   description:
-    'Il gestionale prenotazioni per la tua pizzeria. Gestisci sala e asporto, prenotazioni gruppi e il caos del venerdì sera. Traccia i canali e riempi i giorni deboli.',
+    'Il gestionale delle prenotazioni per la tua pizzeria. Gestisci sala e asporto, prenotazioni gruppi e il caos del venerdì sera. Traccia i canali e riempi i giorni deboli.',
   path: '/gestionale-prenotazioni-pizzeria',
   keywords: [
     'gestionale prenotazioni pizzeria',
@@ -61,7 +61,7 @@ export default function GestionalePizzeriaPage() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Il gestionale prenotazioni{' '}
+            Il gestionale delle prenotazioni{' '}
             <span
               style={{
                 background: 'linear-gradient(135deg, #EF4444, #F59E0B)',

@@ -92,7 +92,7 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight tracking-tight mb-6"
             >
-              Il gestionale prenotazioni che ti mostra{' '}
+              Il gestionale delle prenotazioni che ti mostra{' '}
               <span
                 style={{
                   background: 'linear-gradient(135deg, #6C63FF, #00D4FF)',
@@ -101,9 +101,8 @@ export const Hero = () => {
                   backgroundClip: 'text',
                 }}
               >
-                da dove arrivano davvero
-              </span>{' '}
-              i clienti
+                da dove arrivano davvero i tuoi clienti
+              </span>
             </motion.h1>
 
             {/* Sottotitolo */}

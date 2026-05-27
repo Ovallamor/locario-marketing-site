@@ -12,7 +12,7 @@ import type { FAQItem } from '@/lib/constants'
 export const metadata: Metadata = genMeta({
   title: 'Gestionale Prenotazioni Ristorante | Locario',
   description:
-    'Il gestionale prenotazioni per il tuo ristorante. Gestisci tavoli, turni e prenotazioni da Google, WhatsApp, Instagram in un unico sistema. Traccia i canali e riduci i no-show.',
+    'Il gestionale delle prenotazioni per il tuo ristorante. Gestisci tavoli, turni e prenotazioni da Google, WhatsApp, Instagram in un unico sistema. Traccia i canali e riduci i no-show.',
   path: '/gestionale-prenotazioni-ristorante',
   keywords: [
     'gestionale prenotazioni ristorante',
@@ -91,7 +91,7 @@ export default function GestionaleRistorantePage() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Il gestionale prenotazioni{' '}
+            Il gestionale delle prenotazioni{' '}
             <span
               style={{
                 background: 'linear-gradient(135deg, #F59E0B, #6C63FF)',

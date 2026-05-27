@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: '%s | Locario',
   },
   description:
-    'Locario è il gestionale prenotazioni per attività locali che ti mostra da dove arrivano i clienti. Traccia Google, Instagram, WhatsApp, QR code e campagne in un unico sistema. Prova gratis 14 giorni.',
+    'Locario è il gestionale delle prenotazioni per attività locali che ti mostra da dove arrivano davvero i tuoi clienti. Traccia Google, Instagram, WhatsApp, QR code e campagne in un unico sistema. Prova gratis 14 giorni.',
   keywords:
     'gestionale prenotazioni, prenotazioni online, software prenotazioni ristorante, agenda online parrucchieri, tracking canali acquisizione, prenotazioni centro estetico, gestionale attività locali',
   authors: [{ name: 'Locario', url: LINKS.siteUrl }],
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: 'Locario',
     title: 'Locario | Gestionale Prenotazioni che Traccia i Canali di Acquisizione',
     description:
-      'Il gestionale prenotazioni per attività locali che ti mostra da dove arrivano davvero i clienti. Traccia Google, Instagram, WhatsApp, QR code e campagne. Prova gratis 14 giorni.',
+      'Il gestionale delle prenotazioni per attività locali che ti mostra da dove arrivano davvero i tuoi clienti. Traccia Google, Instagram, WhatsApp, QR code e campagne. Prova gratis 14 giorni.',
     images: [
       {
         url: '/og-image.jpg',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Locario | Gestionale Prenotazioni che Traccia i Canali di Acquisizione',
     description:
-      'Il gestionale prenotazioni per attività locali. Traccia da dove arrivano i tuoi clienti.',
+      'Il gestionale delle prenotazioni per attività locali. Scopri da dove arrivano davvero i tuoi clienti.',
     images: ['/og-image.jpg'],
   },
   robots: {

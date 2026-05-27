@@ -71,7 +71,7 @@ export const Footer = () => {
               </span>
             </Link>
             <p className="text-sm leading-relaxed max-w-xs" style={{ color: '#A1A1AA' }}>
-              Il gestionale prenotazioni che ti mostra da dove arrivano davvero i clienti.
+              Il gestionale delle prenotazioni che ti mostra da dove arrivano davvero i tuoi clienti.
             </p>
             <div className="mt-4">
               <a
