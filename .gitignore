@@ -1,3 +1,6 @@
+# npm local config (non necessario su Railway)
+.npmrc
+
 # dependencies
 node_modules/
 .pnp
