@@ -1,7 +1,8 @@
 // app/contatti/page.tsx
 
 import type { Metadata } from 'next'
-import { generateMetadata as genMeta } from '@/lib/seo'
+import { generateMetadata as genMeta, buildContactPageSchema } from '@/lib/seo'
+import { JsonLd } from '@/components/JsonLd'
 import { ContactForm } from '@/components/ContactForm'
 import { TrialCTA } from '@/components/TrialCTA'
 import { Mail, Clock } from 'lucide-react'
@@ -18,6 +19,7 @@ export const metadata: Metadata = genMeta({
 export default function ContattiPage() {
   return (
     <>
+      <JsonLd schema={buildContactPageSchema()} />
       {/* HERO */}
       <section
         className="section-padding pt-36 lg:pt-44"

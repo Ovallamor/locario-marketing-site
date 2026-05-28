@@ -1,8 +1,9 @@
 // app/come-funziona/page.tsx
 
 import type { Metadata } from 'next'
-import { generateMetadata as genMeta } from '@/lib/seo'
+import { generateMetadata as genMeta, buildHowToSchema } from '@/lib/seo'
 import { TrialCTA } from '@/components/TrialCTA'
+import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import { LINKS, STEPS } from '@/lib/constants'
@@ -47,6 +48,7 @@ const reassurancePoints = [
 export default function ComeFunzionaPage() {
   return (
     <>
+      <JsonLd schema={buildHowToSchema(STEPS)} />
       {/* HERO */}
       <section
         className="section-padding pt-36 lg:pt-44"

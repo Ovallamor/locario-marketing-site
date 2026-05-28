@@ -1,8 +1,9 @@
 // app/gestionale-prenotazioni-centro-estetico/page.tsx
 
 import type { Metadata } from 'next'
-import { generateMetadata as genMeta } from '@/lib/seo'
+import { generateMetadata as genMeta, buildWebPageSchema } from '@/lib/seo'
 import { TrialCTA } from '@/components/TrialCTA'
+import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
 import { ArrowRight, X, Check } from 'lucide-react'
 import { LINKS } from '@/lib/constants'
@@ -42,6 +43,11 @@ const solutionPoints = [
 export default function GestionaleCentroEsteticoPage() {
   return (
     <>
+      <JsonLd schema={buildWebPageSchema({
+        name: 'Gestionale Prenotazioni Centro Estetico e Spa | Locario',
+        description: 'Il gestionale per centri estetici e spa: gestisci trattamenti, cabine, operatrici e clienti abituali in un sistema ordinato.',
+        url: `${LINKS.siteUrl}/gestionale-prenotazioni-centro-estetico`,
+      })} />
       {/* HERO */}
       <section
         className="section-padding pt-36 lg:pt-44"

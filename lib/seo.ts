@@ -137,3 +137,66 @@ export const websiteSchema = {
     'query-input': 'required name=search_term_string',
   },
 }
+
+// ===================================
+// JSON-LD BUILDER FUNCTIONS
+// ===================================
+
+export function buildFAQSchema(items: { question: string; answer: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  }
+}
+
+export function buildHowToSchema(steps: { title: string; description: string; detail: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'Come funziona Locario: gestionale prenotazioni in 5 passi',
+    description: 'Guida step-by-step per iniziare a usare Locario per gestire le prenotazioni della tua attività locale in meno di 5 minuti.',
+    step: steps.map((step, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: step.title,
+      text: `${step.description} ${step.detail}`,
+    })),
+  }
+}
+
+export function buildWebPageSchema({ name, description, url }: { name: string; description: string; url: string }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name,
+    description,
+    url,
+    inLanguage: 'it-IT',
+    isPartOf: { '@type': 'WebSite', url: LINKS.siteUrl },
+  }
+}
+
+export function buildContactPageSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contatti Locario',
+    description: 'Hai domande su Locario? Vuoi capire se è adatto alla tua attività? Scrivici. Rispondiamo entro 24 ore.',
+    url: `${LINKS.siteUrl}/contatti`,
+    inLanguage: 'it-IT',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: LINKS.email,
+      contactType: 'customer support',
+      availableLanguage: 'Italian',
+    },
+  }
+}

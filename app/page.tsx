@@ -5,6 +5,8 @@
 
 import { motion } from 'framer-motion'
 import { X, ArrowRight } from 'lucide-react'
+import { buildFAQSchema } from '@/lib/seo'
+import { JsonLd } from '@/components/JsonLd'
 import { Hero } from '@/components/Hero'
 import { HorizontalFeatures } from '@/components/HorizontalFeatures'
 import { TrackingSources } from '@/components/TrackingSources'
@@ -49,6 +51,7 @@ export default function HomePage() {
 
   return (
     <>
+      <JsonLd schema={buildFAQSchema(homeFAQ)} />
       {/* 1. HERO */}
       <Hero />
 

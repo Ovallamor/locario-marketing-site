@@ -1,7 +1,8 @@
 // app/funzionalita/page.tsx
 
 import type { Metadata } from 'next'
-import { generateMetadata as genMeta } from '@/lib/seo'
+import { generateMetadata as genMeta, buildFAQSchema } from '@/lib/seo'
+import { JsonLd } from '@/components/JsonLd'
 import { FeatureCards } from '@/components/FeatureCards'
 import { TrackingSources } from '@/components/TrackingSources'
 import { FAQ } from '@/components/FAQ'
@@ -29,6 +30,7 @@ const faqFunzionalita = FAQ_ITEMS.filter((_, i) => [2, 6, 7, 4, 1].includes(i))
 export default function FunzionalitaPage() {
   return (
     <>
+      <JsonLd schema={buildFAQSchema(faqFunzionalita)} />
       {/* HERO SEZIONE */}
       <section
         className="section-padding pt-36 lg:pt-44"

@@ -1,9 +1,10 @@
 // app/gestionale-prenotazioni-ristorante/page.tsx
 
 import type { Metadata } from 'next'
-import { generateMetadata as genMeta } from '@/lib/seo'
+import { generateMetadata as genMeta, buildFAQSchema } from '@/lib/seo'
 import { TrialCTA } from '@/components/TrialCTA'
 import { FAQ } from '@/components/FAQ'
+import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
 import { ArrowRight, X, Check } from 'lucide-react'
 import { LINKS } from '@/lib/constants'
@@ -72,6 +73,7 @@ const faqRistorante: FAQItem[] = [
 export default function GestionaleRistorantePage() {
   return (
     <>
+      <JsonLd schema={buildFAQSchema(faqRistorante)} />
       {/* HERO */}
       <section
         className="section-padding pt-36 lg:pt-44"

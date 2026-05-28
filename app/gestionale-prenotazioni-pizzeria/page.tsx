@@ -1,8 +1,9 @@
 // app/gestionale-prenotazioni-pizzeria/page.tsx
 
 import type { Metadata } from 'next'
-import { generateMetadata as genMeta } from '@/lib/seo'
+import { generateMetadata as genMeta, buildWebPageSchema } from '@/lib/seo'
 import { TrialCTA } from '@/components/TrialCTA'
+import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
 import { ArrowRight, X, Check } from 'lucide-react'
 import { LINKS } from '@/lib/constants'
@@ -42,6 +43,11 @@ const solutionPointsPizzeria = [
 export default function GestionalePizzeriaPage() {
   return (
     <>
+      <JsonLd schema={buildWebPageSchema({
+        name: 'Gestionale Prenotazioni Pizzeria | Locario',
+        description: 'Il gestionale delle prenotazioni per la tua pizzeria. Gestisci sala e asporto, prenotazioni gruppi e il caos del venerdì sera.',
+        url: `${LINKS.siteUrl}/gestionale-prenotazioni-pizzeria`,
+      })} />
       {/* HERO */}
       <section
         className="section-padding pt-36 lg:pt-44"
