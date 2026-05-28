@@ -57,6 +57,9 @@ export const metadata: Metadata = {
       'Il gestionale delle prenotazioni per attività locali. Scopri da dove arrivano davvero i tuoi clienti.',
     images: ['/og-image.jpg'],
   },
+  verification: {
+    google: 'yehHzeNbG2IKwQox2EuUhbNFR5ltvEuw-BDbWzR5fQQ',
+  },
   robots: {
     index: true,
     follow: true,
