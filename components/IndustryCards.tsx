@@ -1,11 +1,11 @@
 'use client'
 
 // components/IndustryCards.tsx
-// 4 cards settore con pain points, soluzioni e hover expand
+// cards settore con pain points, soluzioni e hover expand
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { UtensilsCrossed, Scissors, Sparkles, Briefcase, ArrowRight, X, Check } from 'lucide-react'
+import { UtensilsCrossed, Scissors, Sparkles, Briefcase, Coffee, Stethoscope, ArrowRight, X, Check } from 'lucide-react'
 import Link from 'next/link'
 import { INDUSTRIES } from '@/lib/constants'
 
@@ -14,6 +14,8 @@ const iconMap: Record<string, React.ReactNode> = {
   Scissors: <Scissors size={28} />,
   Sparkles: <Sparkles size={28} />,
   Briefcase: <Briefcase size={28} />,
+  Coffee: <Coffee size={28} />,
+  Stethoscope: <Stethoscope size={28} />,
 }
 
 export const IndustryCards = () => {
@@ -53,7 +55,7 @@ export const IndustryCards = () => {
         </motion.div>
 
         {/* Grid settori */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {INDUSTRIES.map((industry, i) => {
             const isExpanded = expandedId === industry.id
 

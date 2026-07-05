@@ -195,7 +195,7 @@ export default function PrenotazioniOnlinePage() {
             Prenotazioni online per ogni settore
           </h2>
           <p className="text-base mb-8" style={{ color: '#A1A1AA' }}>
-            Che tu gestisca un ristorante, un salone o un centro estetico, il sistema si
+            Che tu gestisca un ristorante, un bar, un salone, un centro estetico o uno studio dentistico, il sistema si
             adatta al tuo flusso di lavoro.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
@@ -206,6 +206,9 @@ export default function PrenotazioniOnlinePage() {
               { href: '/prenotazioni-da-google-business-profile', label: 'Google Business' },
               { href: '/gestionale-prenotazioni-parrucchieri', label: 'Parrucchieri' },
               { href: '/gestionale-prenotazioni-centro-estetico', label: 'Centri Estetici' },
+              { href: '/gestionale-prenotazioni-bar', label: 'Bar' },
+              { href: '/gestionale-barber-shop', label: 'Barber Shop' },
+              { href: '/gestionale-prenotazioni-studio-dentistico', label: 'Studi Dentistici' },
             ].map((link) => (
               <Link
                 key={link.href}

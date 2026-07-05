@@ -126,7 +126,7 @@ export const Header = () => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 8, scale: 0.96 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute top-full left-0 mt-2 w-56 rounded-xl overflow-hidden"
+                        className="absolute top-full left-0 mt-2 w-64 rounded-xl overflow-hidden"
                         style={{
                           background: 'rgba(11, 16, 32, 0.95)',
                           backdropFilter: 'blur(16px)',

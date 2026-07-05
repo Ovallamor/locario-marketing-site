@@ -26,6 +26,7 @@ const footerColumns = [
       { href: '/gestionale-prenotazioni-bar', label: 'Bar' },
       { href: '/gestionale-prenotazioni-agriturismo', label: 'Agriturismi' },
       { href: '/gestionale-barber-shop', label: 'Barber Shop' },
+      { href: '/gestionale-prenotazioni-studio-dentistico', label: 'Studi Dentistici' },
     ],
   },
   {

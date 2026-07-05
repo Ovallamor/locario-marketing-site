@@ -393,6 +393,9 @@ export default function FunzionalitaPage() {
               { href: '/gestionale-prenotazioni-pizzeria', label: 'Pizzerie' },
               { href: '/gestionale-prenotazioni-parrucchieri', label: 'Parrucchieri' },
               { href: '/gestionale-prenotazioni-centro-estetico', label: 'Centri Estetici' },
+              { href: '/gestionale-prenotazioni-bar', label: 'Bar' },
+              { href: '/gestionale-barber-shop', label: 'Barber Shop' },
+              { href: '/gestionale-prenotazioni-studio-dentistico', label: 'Studi Dentistici' },
             ].map((link) => (
               <Link
                 key={link.href}

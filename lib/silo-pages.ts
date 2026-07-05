@@ -1024,4 +1024,90 @@ export const SILO_PAGES = {
       },
     ],
   },
+  studioDentistico: {
+    key: 'studioDentistico',
+    path: '/gestionale-prenotazioni-studio-dentistico',
+    kicker: 'Gestionale prenotazioni studio dentistico',
+    title: 'Gestionale prenotazioni',
+    highlight: 'per studi dentistici e appuntamenti paziente',
+    description:
+      'Locario aiuta studi dentistici e cliniche odontoiatriche a gestire appuntamenti, promemoria, richieste da Google e WhatsApp, mantenendo chiara la fonte di ogni nuovo paziente.',
+    gradient: 'linear-gradient(135deg, #14B8A6, #6C63FF)',
+    accent: '#14B8A6',
+    shadow: 'rgba(20, 184, 166, 0.24)',
+    metadata: {
+      title: 'Gestionale Prenotazioni Studio Dentistico | Agenda e Reminder',
+      description:
+        'Gestionale prenotazioni per studio dentistico: agenda online, promemoria appuntamenti, richieste da Google e WhatsApp, tracking dei canali paziente.',
+      keywords: [
+        'gestionale prenotazioni studio dentistico',
+        'agenda online studio dentistico',
+        'software appuntamenti dentista',
+        'prenotazioni online dentista',
+        'promemoria appuntamenti dentista',
+      ],
+    },
+    intent: 'Gestire appuntamenti e richieste paziente in uno studio dentistico',
+    audience: 'Studi dentistici, cliniche odontoiatriche e studi professionali che ricevono appuntamenti da piu canali',
+    painTitle: 'Lo studio riceve richieste, conferme e spostamenti da troppi canali',
+    solutionTitle: 'Una agenda ordinata per appuntamenti, pazienti e fonti',
+    painPoints: [
+      'Telefonate, messaggi WhatsApp e richieste da Google arrivano durante le visite.',
+      'Gli spostamenti appuntamento consumano tempo alla segreteria.',
+      'I pazienti dimenticano orario, trattamento o visita di controllo.',
+      'Non sai quali canali portano nuovi pazienti e quali generano solo contatti generici.',
+    ],
+    solutionPoints: [
+      'Agenda online per appuntamenti, visite, controlli e fasce disponibili.',
+      'Promemoria automatici per ridurre dimenticanze e conferme manuali.',
+      'Link tracciati per Google Business Profile, sito, WhatsApp e campagne locali.',
+      'Scheda cliente con note operative e storico prenotazioni consultabile dallo staff.',
+    ],
+    proofTitle: 'Cosa puo misurare uno studio dentistico',
+    proofItems: [
+      'Quanti appuntamenti arrivano dalla scheda Google Business Profile.',
+      'Quali canali portano nuovi pazienti rispetto ai pazienti ricorrenti.',
+      'Quando si concentrano cancellazioni, spostamenti e no-show.',
+      'Quali campagne o link locali generano richieste reali.',
+    ],
+    related: [
+      {
+        href: '/promemoria-prenotazioni',
+        label: 'Promemoria prenotazioni',
+        description: 'Reminder automatici per ridurre dimenticanze e conferme manuali.',
+      },
+      {
+        href: '/prenotazioni-da-google-business-profile',
+        label: 'Prenotazioni da Google',
+        description: 'Misura le richieste che arrivano dalla scheda Google dello studio.',
+      },
+      {
+        href: '/link-prenotazione-online',
+        label: 'Link prenotazione online',
+        description: 'Usa link tracciati per sito, WhatsApp, Google e campagne.',
+      },
+      {
+        href: '/gestire-prenotazioni-whatsapp',
+        label: 'Prenotazioni WhatsApp',
+        description: 'Porta le richieste da chat dentro un flusso piu ordinato.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Locario va bene per uno studio dentistico?',
+        answer:
+          'Si. Locario e adatto a studi dentistici che vogliono organizzare appuntamenti, promemoria e canali di acquisizione in un sistema piu ordinato.',
+      },
+      {
+        question: 'Posso usare Locario per le richieste da Google?',
+        answer:
+          'Si. Puoi usare un link prenotazione tracciato nella scheda Google Business Profile o nel sito dello studio e misurare le richieste ricevute.',
+      },
+      {
+        question: 'I promemoria aiutano con visite di controllo e appuntamenti lunghi?',
+        answer:
+          'Si. I reminder sono utili soprattutto per appuntamenti fissati con anticipo, visite di controllo e trattamenti che occupano slot importanti in agenda.',
+      },
+    ],
+  },
 } satisfies Record<string, SiloPageData>

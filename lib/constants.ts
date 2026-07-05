@@ -27,6 +27,9 @@ export const INDUSTRY_NAV = [
   { href: '/gestionale-prenotazioni-pizzeria', label: 'Pizzerie' },
   { href: '/gestionale-prenotazioni-parrucchieri', label: 'Parrucchieri' },
   { href: '/gestionale-prenotazioni-centro-estetico', label: 'Centri Estetici' },
+  { href: '/gestionale-prenotazioni-bar', label: 'Bar' },
+  { href: '/gestionale-barber-shop', label: 'Barber Shop' },
+  { href: '/gestionale-prenotazioni-studio-dentistico', label: 'Studi Dentistici' },
 ] as const
 
 // ===================================
@@ -108,6 +111,21 @@ export interface Industry {
 
 export const INDUSTRIES: Industry[] = [
   {
+    id: 'bar',
+    icon: 'Coffee',
+    title: 'Bar e Locali',
+    subtitle: 'Aperitivi, tavoli ed eventi con link tracciati',
+    painPoints: [
+      'Prenotazioni per tavoli e aperitivi sparse tra WhatsApp e Instagram',
+      'Piccoli eventi difficili da organizzare nei momenti di punta',
+      'Nessun dato su Google, social e passaparola digitale',
+      'Richieste serali che si perdono tra messaggi e telefonate',
+    ],
+    solution: 'Link prenotazione, agenda leggera e tracking canali per capire quali fonti riempiono davvero il locale.',
+    href: '/gestionale-prenotazioni-bar',
+    color: '#F59E0B',
+  },
+  {
     id: 'ristorante',
     icon: 'UtensilsCrossed',
     title: 'Ristoranti e Pizzerie',
@@ -166,6 +184,21 @@ export const INDUSTRIES: Industry[] = [
     solution: 'Agenda digitale, storico clienti e promemoria automatici per uno studio professionale più organizzato e misurabile.',
     href: '/prenotazioni-online',
     color: '#22C55E',
+  },
+  {
+    id: 'studio-dentistico',
+    icon: 'Stethoscope',
+    title: 'Studi Dentistici',
+    subtitle: 'Appuntamenti, reminder e nuovi pazienti tracciati',
+    painPoints: [
+      'Telefonate e WhatsApp durante le visite',
+      'Spostamenti appuntamento gestiti a mano dalla segreteria',
+      'Pazienti che dimenticano controlli o orari',
+      'Difficile capire quanti nuovi pazienti arrivano da Google',
+    ],
+    solution: 'Agenda online, promemoria automatici e link tracciati per Google, sito e WhatsApp dello studio.',
+    href: '/gestionale-prenotazioni-studio-dentistico',
+    color: '#14B8A6',
   },
 ]
 

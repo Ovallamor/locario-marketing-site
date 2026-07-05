@@ -259,6 +259,15 @@ export default function GestionaleRistorantePage() {
             <Link href="/gestionale-prenotazioni-centro-estetico" className="text-sm" style={{ color: '#6C63FF' }}>
               Centri Estetici <ArrowRight size={12} className="inline" />
             </Link>
+            <Link href="/gestionale-prenotazioni-bar" className="text-sm" style={{ color: '#6C63FF' }}>
+              Bar <ArrowRight size={12} className="inline" />
+            </Link>
+            <Link href="/gestionale-barber-shop" className="text-sm" style={{ color: '#6C63FF' }}>
+              Barber Shop <ArrowRight size={12} className="inline" />
+            </Link>
+            <Link href="/gestionale-prenotazioni-studio-dentistico" className="text-sm" style={{ color: '#6C63FF' }}>
+              Studi Dentistici <ArrowRight size={12} className="inline" />
+            </Link>
           </div>
         </div>
       </section>
