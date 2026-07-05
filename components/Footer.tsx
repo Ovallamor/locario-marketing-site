@@ -23,6 +23,9 @@ const footerColumns = [
       { href: '/gestionale-prenotazioni-pizzeria', label: 'Pizzerie' },
       { href: '/gestionale-prenotazioni-parrucchieri', label: 'Parrucchieri' },
       { href: '/gestionale-prenotazioni-centro-estetico', label: 'Centri Estetici' },
+      { href: '/gestionale-prenotazioni-bar', label: 'Bar' },
+      { href: '/gestionale-prenotazioni-agriturismo', label: 'Agriturismi' },
+      { href: '/gestionale-barber-shop', label: 'Barber Shop' },
     ],
   },
   {
@@ -33,6 +36,10 @@ const footerColumns = [
       { href: '/ridurre-no-show-ristorante', label: 'Ridurre No-Show' },
       { href: '/gestire-prenotazioni-whatsapp', label: 'Prenotazioni WhatsApp' },
       { href: '/prenotazioni-da-google-business-profile', label: 'Prenotazioni da Google' },
+      { href: '/link-prenotazione-online', label: 'Link Prenotazione' },
+      { href: '/promemoria-prenotazioni', label: 'Promemoria' },
+      { href: '/agenda-online-parrucchieri', label: 'Agenda Parrucchieri' },
+      { href: '/agenda-online-centro-estetico', label: 'Agenda Centro Estetico' },
     ],
   },
   {
