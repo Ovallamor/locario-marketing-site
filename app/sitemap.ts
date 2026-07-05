@@ -39,6 +39,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: 'https://locario.net/software-prenotazioni-ristorante',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.82,
+    },
+    {
+      url: 'https://locario.net/prenotazioni-online-ristorante',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.82,
+    },
+    {
+      url: 'https://locario.net/ridurre-no-show-ristorante',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.78,
+    },
+    {
+      url: 'https://locario.net/gestire-prenotazioni-whatsapp',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.78,
+    },
+    {
+      url: 'https://locario.net/prenotazioni-da-google-business-profile',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.78,
+    },
+    {
       url: 'https://locario.net/gestionale-prenotazioni-ristorante',
       lastModified: new Date(),
       changeFrequency: 'monthly',

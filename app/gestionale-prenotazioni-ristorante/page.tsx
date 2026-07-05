@@ -230,6 +230,23 @@ export default function GestionaleRistorantePage() {
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-sm mb-4" style={{ color: '#A1A1AA' }}>
+            Approfondisci il silo ristoranti:
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            <Link href="/software-prenotazioni-ristorante" className="text-sm" style={{ color: '#F59E0B' }}>
+              Software prenotazioni <ArrowRight size={12} className="inline" />
+            </Link>
+            <Link href="/prenotazioni-online-ristorante" className="text-sm" style={{ color: '#F59E0B' }}>
+              Prenotazioni online <ArrowRight size={12} className="inline" />
+            </Link>
+            <Link href="/ridurre-no-show-ristorante" className="text-sm" style={{ color: '#F59E0B' }}>
+              Ridurre no-show <ArrowRight size={12} className="inline" />
+            </Link>
+            <Link href="/prenotazioni-da-google-business-profile" className="text-sm" style={{ color: '#F59E0B' }}>
+              Prenotazioni da Google <ArrowRight size={12} className="inline" />
+            </Link>
+          </div>
+          <p className="text-sm mb-4" style={{ color: '#A1A1AA' }}>
             Locario funziona anche per:
           </p>
           <div className="flex flex-wrap justify-center gap-3">

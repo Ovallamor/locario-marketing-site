@@ -26,6 +26,16 @@ const footerColumns = [
     ],
   },
   {
+    title: 'Soluzioni',
+    links: [
+      { href: '/software-prenotazioni-ristorante', label: 'Software Ristoranti' },
+      { href: '/prenotazioni-online-ristorante', label: 'Prenotazioni Online Ristorante' },
+      { href: '/ridurre-no-show-ristorante', label: 'Ridurre No-Show' },
+      { href: '/gestire-prenotazioni-whatsapp', label: 'Prenotazioni WhatsApp' },
+      { href: '/prenotazioni-da-google-business-profile', label: 'Prenotazioni da Google' },
+    ],
+  },
+  {
     title: 'Azienda',
     links: [
       { href: '/contatti', label: 'Contatti' },
@@ -53,7 +63,7 @@ export const Footer = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         {/* Grid principale */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 lg:gap-12">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
             {/* Logo */}

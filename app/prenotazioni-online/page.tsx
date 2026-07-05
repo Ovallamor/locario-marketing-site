@@ -201,6 +201,9 @@ export default function PrenotazioniOnlinePage() {
           <div className="flex flex-wrap justify-center gap-3">
             {[
               { href: '/gestionale-prenotazioni-ristorante', label: 'Ristoranti e Pizzerie' },
+              { href: '/prenotazioni-online-ristorante', label: 'Prenotazioni Online Ristorante' },
+              { href: '/gestire-prenotazioni-whatsapp', label: 'WhatsApp' },
+              { href: '/prenotazioni-da-google-business-profile', label: 'Google Business' },
               { href: '/gestionale-prenotazioni-parrucchieri', label: 'Parrucchieri' },
               { href: '/gestionale-prenotazioni-centro-estetico', label: 'Centri Estetici' },
             ].map((link) => (
