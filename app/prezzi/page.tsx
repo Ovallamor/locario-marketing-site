@@ -101,6 +101,9 @@ export default function PrezziPage() {
             Inizia con 30 giorni di prova gratuita. Nessuna carta. Nessun vincolo. Scegli il piano
             solo se ti convince davvero.
           </p>
+          <p className="text-sm font-medium mt-4" style={{ color: '#22C55E' }}>
+            Prezzo fisso al mese, zero commissioni sulle prenotazioni: quello che guadagni resta tuo.
+          </p>
         </div>
       </section>
 

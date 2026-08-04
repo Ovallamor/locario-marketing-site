@@ -63,6 +63,12 @@ const baseRoutes: MetadataRoute.Sitemap = [
     priority: 0.8,
   },
   {
+    url: 'https://locario.net/gestionale-prenotazioni-bb',
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  },
+  {
     url: 'https://locario.net/gestione-clienti',
     lastModified: new Date(),
     changeFrequency: 'monthly',

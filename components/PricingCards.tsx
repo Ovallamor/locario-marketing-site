@@ -30,7 +30,7 @@ const plans: Plan[] = [
   {
     id: 'starter',
     name: 'Starter',
-    tagline: 'Per piccoli saloni, barbieri e centri estetici che iniziano con le prenotazioni online.',
+    tagline: 'Per attività che iniziano con le prenotazioni online — ristoranti, saloni, studi o B&B.',
     monthlyPrice: '€29/mese',
     annualPrice: '€290/anno',
     annualMonthly: '€24,17/mese',
@@ -90,7 +90,7 @@ const plans: Plan[] = [
   {
     id: 'business',
     name: 'Business',
-    tagline: 'Per strutture ad alto volume, team grandi o configurazioni personalizzate.',
+    tagline: 'Per strutture ad alto volume, team grandi, più sedi o più B&B sullo stesso account, e configurazioni personalizzate.',
     monthlyPrice: 'Da €149/mese',
     annualPrice: 'Da €1.490/anno',
     annualMonthly: 'Da €124/mese',

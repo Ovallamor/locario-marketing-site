@@ -5,7 +5,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { UtensilsCrossed, Scissors, Sparkles, Briefcase, Coffee, Stethoscope, ArrowRight, X, Check } from 'lucide-react'
+import { UtensilsCrossed, Scissors, Sparkles, Briefcase, Coffee, Stethoscope, BedDouble, ArrowRight, X, Check } from 'lucide-react'
 import Link from 'next/link'
 import { INDUSTRIES } from '@/lib/constants'
 
@@ -16,6 +16,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Briefcase: <Briefcase size={28} />,
   Coffee: <Coffee size={28} />,
   Stethoscope: <Stethoscope size={28} />,
+  BedDouble: <BedDouble size={28} />,
 }
 
 export const IndustryCards = () => {

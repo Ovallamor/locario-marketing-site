@@ -26,6 +26,7 @@ const footerColumns = [
       { href: '/gestionale-prenotazioni-centro-estetico', label: 'Centri Estetici' },
       { href: '/gestionale-prenotazioni-bar', label: 'Bar' },
       { href: '/gestionale-prenotazioni-agriturismo', label: 'Agriturismi' },
+      { href: '/gestionale-prenotazioni-bb', label: 'B&B e Case Vacanza' },
       { href: '/gestionale-barber-shop', label: 'Barber Shop' },
       { href: '/gestionale-prenotazioni-studio-dentistico', label: 'Studi Dentistici' },
     ],

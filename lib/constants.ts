@@ -30,6 +30,7 @@ export const INDUSTRY_NAV = [
   { href: '/gestionale-prenotazioni-bar', label: 'Bar' },
   { href: '/gestionale-barber-shop', label: 'Barber Shop' },
   { href: '/gestionale-prenotazioni-studio-dentistico', label: 'Studi Dentistici' },
+  { href: '/gestionale-prenotazioni-bb', label: 'B&B e Case Vacanza' },
 ] as const
 
 // ===================================
@@ -199,6 +200,21 @@ export const INDUSTRIES: Industry[] = [
     solution: 'Agenda online, promemoria automatici e link tracciati per Google, sito e WhatsApp dello studio.',
     href: '/gestionale-prenotazioni-studio-dentistico',
     color: '#14B8A6',
+  },
+  {
+    id: 'bnb',
+    icon: 'BedDouble',
+    title: 'B&B e Case Vacanza',
+    subtitle: 'Camere, canali OTA e burocrazia ricettiva in un unico sistema',
+    painPoints: [
+      'Calendario diviso tra Airbnb, Booking.com e prenotazioni dirette, col rischio di doppie prenotazioni',
+      'Schedine Alloggiati Web e comunicazione ROSS1000 da compilare a mano',
+      'Caparra, saldo e tassa di soggiorno gestiti fuori piattaforma, tra bonifici e contanti',
+      'Nessun dato su quale canale — diretto, Airbnb, Booking.com — porta davvero valore',
+    ],
+    solution: 'Calendario unico con sync automatico dei canali, invio guidato ad Alloggiati Web e ROSS1000, pagamenti e tassa di soggiorno incassati online.',
+    href: '/gestionale-prenotazioni-bb',
+    color: '#F43F5E',
   },
 ]
 
