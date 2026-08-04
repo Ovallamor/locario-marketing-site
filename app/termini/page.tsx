@@ -1,4 +1,4 @@
-// app/termini/page.tsx
+﻿// app/termini/page.tsx
 
 import type { Metadata } from 'next'
 import { generateMetadata as genMeta } from '@/lib/seo'
@@ -92,7 +92,7 @@ export default function TerminiPage() {
 
           <Section title="4. Prova gratuita">
             <p>
-              Locario offre un periodo di prova gratuita di <strong className="text-white">14 giorni</strong> su tutti i piani,
+              Locario offre un periodo di prova gratuita di <strong className="text-white">30 giorni</strong> su tutti i piani,
               senza obbligo di inserire una carta di credito. Al termine del periodo di prova:
             </p>
             <ul className="mt-4 space-y-2 list-none">

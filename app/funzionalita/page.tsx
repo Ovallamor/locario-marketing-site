@@ -1,4 +1,4 @@
-// app/funzionalita/page.tsx
+﻿// app/funzionalita/page.tsx
 
 import type { Metadata } from 'next'
 import { generateMetadata as genMeta, buildFAQSchema } from '@/lib/seo'
@@ -7,10 +7,10 @@ import { FeatureCards } from '@/components/FeatureCards'
 import { TrackingSources } from '@/components/TrackingSources'
 import { FAQ } from '@/components/FAQ'
 import { TrialCTA } from '@/components/TrialCTA'
+import { TrialLink } from '@/components/TrialLink'
 import { FAQ_ITEMS } from '@/lib/constants'
 import Link from 'next/link'
 import { ArrowRight, Users, BarChart3, Bell } from 'lucide-react'
-import { LINKS } from '@/lib/constants'
 
 export const metadata: Metadata = genMeta({
   title: 'Funzionalità Locario | Gestionale Prenotazioni Completo',
@@ -69,17 +69,17 @@ export default function FunzionalitaPage() {
             tuo tempo e il tuo budget.
           </p>
 
-          <Link
-            href={LINKS.trial}
+          <TrialLink
+            source="hero"
             className="inline-flex items-center gap-2 px-7 py-4 text-base font-semibold text-white rounded-xl"
             style={{
               background: 'linear-gradient(135deg, #6C63FF, #00D4FF)',
               boxShadow: '0 8px 32px rgba(108, 99, 255, 0.4)',
             }}
           >
-            Prova gratis 14 giorni
+            Prova gratis 30 giorni
             <ArrowRight size={18} />
-          </Link>
+          </TrialLink>
         </div>
       </section>
 

@@ -1,10 +1,11 @@
-'use client'
+﻿'use client'
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Check, Zap } from 'lucide-react'
 import { LINKS } from '@/lib/constants'
+import { TrialLink } from '@/components/TrialLink'
 
 type BillingCycle = 'monthly' | 'annual'
 
@@ -21,6 +22,7 @@ interface Plan {
   features: string[]
   cta: string
   ctaHref: string
+  ctaSource?: string
   ctaStyle: 'outline' | 'gradient'
 }
 
@@ -47,6 +49,7 @@ const plans: Plan[] = [
     ],
     cta: 'Inizia la prova gratis',
     ctaHref: LINKS.trial,
+    ctaSource: 'pricing-starter',
     ctaStyle: 'outline',
   },
   {
@@ -81,6 +84,7 @@ const plans: Plan[] = [
     ],
     cta: 'Inizia la prova gratis',
     ctaHref: LINKS.trial,
+    ctaSource: 'pricing-professional',
     ctaStyle: 'gradient',
   },
   {
@@ -164,7 +168,7 @@ export const PricingCards = ({ showNote = true, showToggle = true }: PricingCard
           >
             <Check size={14} style={{ color: '#22C55E' }} />
             <span className="text-sm font-medium" style={{ color: '#22C55E' }}>
-              14 giorni di prova gratuita su tutti i piani. Nessuna carta di credito richiesta.
+              30 giorni di prova gratuita su tutti i piani. Nessuna carta di credito richiesta.
             </span>
           </div>
         </motion.div>
@@ -316,16 +320,41 @@ export const PricingCards = ({ showNote = true, showToggle = true }: PricingCard
 
                 {/* CTA */}
                 {plan.ctaStyle === 'gradient' ? (
-                  <Link
-                    href={plan.ctaHref}
-                    className="block text-center py-4 rounded-xl font-semibold text-white text-sm transition-all duration-200 hover:-translate-y-0.5"
+                  plan.ctaSource ? (
+                    <TrialLink
+                      source={plan.ctaSource}
+                      className="block text-center py-4 rounded-xl font-semibold text-white text-sm transition-all duration-200 hover:-translate-y-0.5"
+                      style={{
+                        background: 'linear-gradient(135deg, #6C63FF, #00D4FF)',
+                        boxShadow: '0 4px 20px rgba(108, 99, 255, 0.4)',
+                      }}
+                    >
+                      {plan.cta}
+                    </TrialLink>
+                  ) : (
+                    <Link
+                      href={plan.ctaHref}
+                      className="block text-center py-4 rounded-xl font-semibold text-white text-sm transition-all duration-200 hover:-translate-y-0.5"
+                      style={{
+                        background: 'linear-gradient(135deg, #6C63FF, #00D4FF)',
+                        boxShadow: '0 4px 20px rgba(108, 99, 255, 0.4)',
+                      }}
+                    >
+                      {plan.cta}
+                    </Link>
+                  )
+                ) : plan.ctaSource ? (
+                  <TrialLink
+                    source={plan.ctaSource}
+                    className="block text-center py-4 rounded-xl font-semibold text-sm transition-all duration-200 hover:border-white/40"
                     style={{
-                      background: 'linear-gradient(135deg, #6C63FF, #00D4FF)',
-                      boxShadow: '0 4px 20px rgba(108, 99, 255, 0.4)',
+                      border: '1px solid rgba(255,255,255,0.2)',
+                      color: 'white',
+                      background: 'transparent',
                     }}
                   >
                     {plan.cta}
-                  </Link>
+                  </TrialLink>
                 ) : (
                   <Link
                     href={plan.ctaHref}

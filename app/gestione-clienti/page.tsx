@@ -1,11 +1,10 @@
-// app/gestione-clienti/page.tsx
+﻿// app/gestione-clienti/page.tsx
 
 import type { Metadata } from 'next'
 import { generateMetadata as genMeta } from '@/lib/seo'
 import { TrialCTA } from '@/components/TrialCTA'
-import Link from 'next/link'
+import { TrialLink } from '@/components/TrialLink'
 import { ArrowRight, Check } from 'lucide-react'
-import { LINKS } from '@/lib/constants'
 
 export const metadata: Metadata = genMeta({
   title: 'Software Gestione Clienti per Attività Locali | Locario',
@@ -95,16 +94,16 @@ export default function GestioneClientiPage() {
             attività.
           </p>
 
-          <Link
-            href={LINKS.trial}
+          <TrialLink
+            source="hero"
             className="inline-flex items-center gap-2 px-7 py-4 text-base font-semibold text-white rounded-xl"
             style={{
               background: 'linear-gradient(135deg, #22C55E, #00D4FF)',
               boxShadow: '0 8px 32px rgba(34, 197, 94, 0.3)',
             }}
           >
-            Prova gratis 14 giorni <ArrowRight size={18} />
-          </Link>
+            Prova gratis 30 giorni <ArrowRight size={18} />
+          </TrialLink>
         </div>
       </section>
 

@@ -16,8 +16,7 @@ import { PricingCards } from '@/components/PricingCards'
 import { FAQ } from '@/components/FAQ'
 import { TrialCTA } from '@/components/TrialCTA'
 import { FAQ_ITEMS } from '@/lib/constants'
-import Link from 'next/link'
-import { LINKS } from '@/lib/constants'
+import { TrialLink } from '@/components/TrialLink'
 
 // Pain points per la sezione problema
 const painPoints = [
@@ -176,8 +175,8 @@ export default function HomePage() {
                 ))}
               </ul>
 
-              <Link
-                href={LINKS.trial}
+              <TrialLink
+                source="soluzione"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5"
                 style={{
                   background: 'linear-gradient(135deg, #6C63FF, #00D4FF)',
@@ -186,7 +185,7 @@ export default function HomePage() {
               >
                 Inizia gratis
                 <ArrowRight size={16} />
-              </Link>
+              </TrialLink>
             </motion.div>
 
             {/* Visual right */}

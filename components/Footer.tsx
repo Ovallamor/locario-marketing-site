@@ -1,8 +1,9 @@
-// components/Footer.tsx
+﻿// components/Footer.tsx
 // Footer con 4 colonne di link, logo, tagline e copyright
 
 import Link from 'next/link'
 import { LINKS } from '@/lib/constants'
+import { TrialLink } from '@/components/TrialLink'
 
 const footerColumns = [
   {
@@ -54,7 +55,7 @@ const footerColumns = [
   {
     title: 'Inizia',
     links: [
-      { href: LINKS.trial, label: 'Prova gratis 14 giorni', external: true },
+      { href: LINKS.trial, label: 'Prova gratis 30 giorni', external: true, isTrial: true },
       { href: LINKS.login, label: 'Login', external: true },
       { href: LINKS.register, label: 'Registrati', external: true },
     ],
@@ -111,7 +112,17 @@ export const Footer = () => {
               <ul className="space-y-3">
                 {col.links.map((link) => (
                   <li key={link.href}>
-                    {'external' in link && link.external ? (
+                    {'isTrial' in link && link.isTrial ? (
+                      <TrialLink
+                        source="footer"
+                        className="text-sm transition-colors duration-150 hover:text-white"
+                        style={{ color: '#A1A1AA' }}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {link.label}
+                      </TrialLink>
+                    ) : 'external' in link && link.external ? (
                       <a
                         href={link.href}
                         className="text-sm transition-colors duration-150 hover:text-white"

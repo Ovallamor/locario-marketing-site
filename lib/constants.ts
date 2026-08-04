@@ -7,7 +7,7 @@
 export const LINKS = {
   login: 'https://app.locario.net/login',
   register: 'https://app.locario.net/register',
-  trial: 'https://app.locario.net/register?trial=14',
+  trial: 'https://app.locario.net/register',
   email: 'info@locario.net',
   siteUrl: 'https://locario.net',
 } as const
@@ -309,7 +309,7 @@ export const STEPS: Step[] = [
     number: '01',
     icon: 'UserPlus',
     title: 'Crea il tuo account',
-    description: 'Registrati in 2 minuti. Nessuna carta richiesta. 14 giorni gratis.',
+    description: 'Registrati in 2 minuti. Nessuna carta richiesta. 30 giorni gratis.',
     detail: 'Inserisci email e nome attività. Sei subito dentro, senza burocrazia e senza rischi.',
   },
   {
@@ -353,7 +353,7 @@ export interface FAQItem {
 export const FAQ_ITEMS: FAQItem[] = [
   {
     question: 'Come funziona la prova gratuita di Locario?',
-    answer: 'Hai 14 giorni completi per esplorare tutte le funzionalità di Locario senza limiti. Nessuna carta di credito richiesta. Al termine della prova puoi scegliere un piano o semplicemente smettere di usarlo: nessun addebito automatico.',
+    answer: 'Hai 30 giorni completi per esplorare tutte le funzionalità di Locario senza limiti. Nessuna carta di credito richiesta. Al termine della prova puoi scegliere un piano o semplicemente smettere di usarlo: nessun addebito automatico.',
   },
   {
     question: 'Posso usare Locario per il mio ristorante?',
@@ -384,7 +384,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     answer: 'Il sistema invia automaticamente un promemoria al cliente prima dell\'appuntamento (24 ore prima o all\'orario che configuri tu). Questo riduce significativamente i no-show e le cancellazioni dell\'ultimo minuto.',
   },
   {
-    question: 'Cosa succede dopo i 14 giorni di prova?',
+    question: 'Cosa succede dopo i 30 giorni di prova?',
     answer: 'Al termine della prova ti viene chiesto di scegliere un piano per continuare. Se non lo fai, l\'account viene sospeso automaticamente e non viene addebitato nulla. Nessuna sorpresa.',
   },
   {

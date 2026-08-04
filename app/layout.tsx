@@ -1,4 +1,4 @@
-// app/layout.tsx
+﻿// app/layout.tsx
 // Layout radice: font, metadata, schema JSON-LD, provider globali
 
 import type { Metadata } from 'next'
@@ -8,6 +8,7 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { SmoothLoader } from '@/components/SmoothLoader'
 import { ScrollProgress } from '@/components/ScrollProgress'
+import { Analytics } from '@/components/Analytics'
 import { LINKS } from '@/lib/constants'
 import { organizationSchema, softwareApplicationSchema, websiteSchema } from '@/lib/seo'
 
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     template: '%s | Locario',
   },
   description:
-    'Locario è il gestionale delle prenotazioni per attività locali che ti mostra da dove arrivano davvero i tuoi clienti. Traccia Google, Instagram, WhatsApp, QR code e campagne in un unico sistema. Prova gratis 14 giorni.',
+    'Locario è il gestionale delle prenotazioni per attività locali che ti mostra da dove arrivano davvero i tuoi clienti. Traccia Google, Instagram, WhatsApp, QR code e campagne in un unico sistema. Prova gratis 30 giorni.',
   keywords:
     'gestionale prenotazioni, prenotazioni online, software prenotazioni ristorante, agenda online parrucchieri, tracking canali acquisizione, prenotazioni centro estetico, gestionale attività locali',
   authors: [{ name: 'Locario', url: LINKS.siteUrl }],
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     siteName: 'Locario',
     title: 'Locario | Gestionale Prenotazioni che Traccia i Canali di Acquisizione',
     description:
-      'Il gestionale delle prenotazioni per attività locali che ti mostra da dove arrivano davvero i tuoi clienti. Traccia Google, Instagram, WhatsApp, QR code e campagne. Prova gratis 14 giorni.',
+      'Il gestionale delle prenotazioni per attività locali che ti mostra da dove arrivano davvero i tuoi clienti. Traccia Google, Instagram, WhatsApp, QR code e campagne. Prova gratis 30 giorni.',
     images: [
       {
         url: '/og-image.jpg',
@@ -127,6 +128,9 @@ export default function RootLayout({
 
         {/* Footer globale */}
         <Footer />
+
+        {/* GA4 (dopo consenso) + banner cookie */}
+        <Analytics />
       </body>
     </html>
   )

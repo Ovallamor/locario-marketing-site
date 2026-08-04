@@ -116,7 +116,7 @@ export const softwareApplicationSchema = {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'EUR',
-    description: '14 giorni di prova gratuita. Nessuna carta di credito richiesta.',
+    description: '30 giorni di prova gratuita. Nessuna carta di credito richiesta.',
   },
   url: LINKS.login,
   screenshot: `${LINKS.siteUrl}/screenshot.jpg`,

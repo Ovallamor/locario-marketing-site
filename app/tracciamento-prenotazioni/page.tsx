@@ -6,9 +6,8 @@ import { generateMetadata as genMeta } from '@/lib/seo'
 import { TrackingSources } from '@/components/TrackingSources'
 import { TrialCTA } from '@/components/TrialCTA'
 import { FAQ } from '@/components/FAQ'
-import Link from 'next/link'
+import { TrialLink } from '@/components/TrialLink'
 import { ArrowRight, Check } from 'lucide-react'
-import { LINKS } from '@/lib/constants'
 import type { FAQItem } from '@/lib/constants'
 
 export const metadata: Metadata = genMeta({
@@ -93,8 +92,8 @@ export default function TracciamentoPrenotazioniPage() {
             attività locali non riesce a rispondere a questa domanda. Con Locario, puoi.
           </p>
 
-          <Link
-            href={LINKS.trial}
+          <TrialLink
+            source="hero"
             className="inline-flex items-center gap-2 px-7 py-4 text-base font-semibold text-white rounded-xl"
             style={{
               background: 'linear-gradient(135deg, #22C55E, #00D4FF)',
@@ -102,7 +101,7 @@ export default function TracciamentoPrenotazioniPage() {
             }}
           >
             Inizia a tracciare gratis <ArrowRight size={18} />
-          </Link>
+          </TrialLink>
         </div>
       </section>
 

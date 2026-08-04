@@ -1,12 +1,12 @@
-// app/prenotazioni-online/page.tsx
+﻿// app/prenotazioni-online/page.tsx
 
 import type { Metadata } from 'next'
 import { generateMetadata as genMeta } from '@/lib/seo'
 import { TrackingSources } from '@/components/TrackingSources'
 import { TrialCTA } from '@/components/TrialCTA'
 import Link from 'next/link'
+import { TrialLink } from '@/components/TrialLink'
 import { ArrowRight, Clock, Smartphone, BarChart3 } from 'lucide-react'
-import { LINKS } from '@/lib/constants'
 
 export const metadata: Metadata = genMeta({
   title: 'Prenotazioni Online per la tua Attività | Locario',
@@ -72,16 +72,16 @@ export default function PrenotazioniOnlinePage() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href={LINKS.trial}
+            <TrialLink
+              source="hero"
               className="inline-flex items-center gap-2 px-7 py-4 text-base font-semibold text-white rounded-xl"
               style={{
                 background: 'linear-gradient(135deg, #6C63FF, #00D4FF)',
                 boxShadow: '0 8px 32px rgba(108, 99, 255, 0.4)',
               }}
             >
-              Prova gratis 14 giorni <ArrowRight size={18} />
-            </Link>
+              Prova gratis 30 giorni <ArrowRight size={18} />
+            </TrialLink>
           </div>
         </div>
       </section>

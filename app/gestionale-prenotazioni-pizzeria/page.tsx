@@ -1,10 +1,10 @@
-// app/gestionale-prenotazioni-pizzeria/page.tsx
+﻿// app/gestionale-prenotazioni-pizzeria/page.tsx
 
 import type { Metadata } from 'next'
 import { generateMetadata as genMeta, buildWebPageSchema } from '@/lib/seo'
 import { TrialCTA } from '@/components/TrialCTA'
 import { JsonLd } from '@/components/JsonLd'
-import Link from 'next/link'
+import { TrialLink } from '@/components/TrialLink'
 import { ArrowRight, X, Check } from 'lucide-react'
 import { LINKS } from '@/lib/constants'
 
@@ -85,16 +85,16 @@ export default function GestionalePizzeriaPage() {
             Locario le gestisce tutte in un sistema unico, con dati chiari su ogni canale.
           </p>
 
-          <Link
-            href={LINKS.trial}
+          <TrialLink
+            source="hero"
             className="inline-flex items-center gap-2 px-7 py-4 text-base font-semibold text-white rounded-xl"
             style={{
               background: 'linear-gradient(135deg, #EF4444, #F59E0B)',
               boxShadow: '0 8px 32px rgba(239, 68, 68, 0.3)',
             }}
           >
-            Prova gratis 14 giorni <ArrowRight size={18} />
-          </Link>
+            Prova gratis 30 giorni <ArrowRight size={18} />
+          </TrialLink>
         </div>
       </section>
 
@@ -235,8 +235,8 @@ export default function GestionalePizzeriaPage() {
             Locario ti mostra quali sono i giorni con meno prenotazioni, da quali canali arrivano
             quelle poche e dove puoi fare una promozione mirata per riempire i tavoli vuoti.
           </p>
-          <Link
-            href={LINKS.trial}
+          <TrialLink
+            source="mid-page"
             className="inline-flex items-center gap-2 px-7 py-4 text-base font-semibold text-white rounded-xl"
             style={{
               background: 'linear-gradient(135deg, #6C63FF, #00D4FF)',
@@ -244,7 +244,7 @@ export default function GestionalePizzeriaPage() {
             }}
           >
             Inizia la prova gratis <ArrowRight size={18} />
-          </Link>
+          </TrialLink>
         </div>
       </section>
 

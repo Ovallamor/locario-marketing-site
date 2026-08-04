@@ -1,13 +1,12 @@
-// app/gestionale-prenotazioni-parrucchieri/page.tsx
+﻿// app/gestionale-prenotazioni-parrucchieri/page.tsx
 
 import type { Metadata } from 'next'
 import { generateMetadata as genMeta, buildFAQSchema } from '@/lib/seo'
 import { TrialCTA } from '@/components/TrialCTA'
 import { FAQ } from '@/components/FAQ'
 import { JsonLd } from '@/components/JsonLd'
-import Link from 'next/link'
+import { TrialLink } from '@/components/TrialLink'
 import { ArrowRight, X, Check } from 'lucide-react'
-import { LINKS } from '@/lib/constants'
 import type { FAQItem } from '@/lib/constants'
 
 export const metadata: Metadata = genMeta({
@@ -111,16 +110,16 @@ export default function GestionaleParrucchieriPage() {
             da soli, tu lavori senza interruzioni e sai da dove arriva ogni nuovo appuntamento.
           </p>
 
-          <Link
-            href={LINKS.trial}
+          <TrialLink
+            source="hero"
             className="inline-flex items-center gap-2 px-7 py-4 text-base font-semibold text-white rounded-xl"
             style={{
               background: 'linear-gradient(135deg, #6C63FF, #00D4FF)',
               boxShadow: '0 8px 32px rgba(108, 99, 255, 0.4)',
             }}
           >
-            Prova gratis 14 giorni <ArrowRight size={18} />
-          </Link>
+            Prova gratis 30 giorni <ArrowRight size={18} />
+          </TrialLink>
         </div>
       </section>
 

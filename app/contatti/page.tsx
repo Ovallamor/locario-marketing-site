@@ -1,10 +1,11 @@
-// app/contatti/page.tsx
+﻿// app/contatti/page.tsx
 
 import type { Metadata } from 'next'
 import { generateMetadata as genMeta, buildContactPageSchema } from '@/lib/seo'
 import { JsonLd } from '@/components/JsonLd'
 import { ContactForm } from '@/components/ContactForm'
 import { TrialCTA } from '@/components/TrialCTA'
+import { TrialLink } from '@/components/TrialLink'
 import { Mail, Clock } from 'lucide-react'
 import { LINKS } from '@/lib/constants'
 
@@ -114,15 +115,15 @@ export default function ContattiPage() {
                   Vuoi provare subito senza aspettare?
                 </p>
                 <p className="text-sm mb-4" style={{ color: '#A1A1AA' }}>
-                  Registrati e inizia la prova gratuita di 14 giorni. Nessuna carta richiesta.
+                  Registrati e inizia la prova gratuita di 30 giorni. Nessuna carta richiesta.
                 </p>
-                <a
-                  href={LINKS.trial}
+                <TrialLink
+                  source="contatti-sidebar"
                   className="inline-flex items-center gap-2 text-sm font-semibold"
                   style={{ color: '#6C63FF' }}
                 >
                   Inizia la prova gratis
-                </a>
+                </TrialLink>
               </div>
 
               <div className="mt-8">

@@ -1,7 +1,8 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { ArrowRight, BarChart3, Check, Network, Search, X } from 'lucide-react'
 import { JsonLd } from '@/components/JsonLd'
 import { TrialCTA } from '@/components/TrialCTA'
+import { TrialLink } from '@/components/TrialLink'
 import { FAQ } from '@/components/FAQ'
 import { LINKS } from '@/lib/constants'
 import { buildFAQSchema, buildWebPageSchema } from '@/lib/seo'
@@ -75,16 +76,16 @@ export function SeoSiloPage({ page }: { page: SiloPageData }) {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link
-              href={LINKS.trial}
+            <TrialLink
+              source={`silo:${page.path}`}
               className="inline-flex items-center justify-center gap-2 px-7 py-4 text-base font-semibold text-white rounded-xl"
               style={{
                 background: page.gradient,
                 boxShadow: `0 8px 32px ${page.shadow}`,
               }}
             >
-              Prova gratis 14 giorni <ArrowRight size={18} />
-            </Link>
+              Prova gratis 30 giorni <ArrowRight size={18} />
+            </TrialLink>
             <Link
               href="/tracciamento-prenotazioni"
               className="inline-flex items-center justify-center gap-2 px-7 py-4 text-base font-semibold text-white rounded-xl"

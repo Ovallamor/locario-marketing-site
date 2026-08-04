@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 // components/Header.tsx
 // Header sticky con navigazione desktop/mobile, dropdown settori e hide-on-scroll
@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { LINKS, NAV_ITEMS, INDUSTRY_NAV } from '@/lib/constants'
+import { TrialLink } from '@/components/TrialLink'
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -158,8 +159,8 @@ export const Header = () => {
                 >
                   Login
                 </Link>
-                <Link
-                  href={LINKS.trial}
+                <TrialLink
+                  source="header-desktop"
                   className="px-5 py-2.5 text-sm font-semibold text-white rounded-lg transition-all duration-200 hover:-translate-y-0.5"
                   style={{
                     background: 'linear-gradient(135deg, #6C63FF, #00D4FF)',
@@ -167,7 +168,7 @@ export const Header = () => {
                   }}
                 >
                   Prova gratis
-                </Link>
+                </TrialLink>
               </div>
 
               {/* Hamburger mobile */}
@@ -269,14 +270,14 @@ export const Header = () => {
 
             {/* CTA mobile */}
             <div className="px-4 pb-8 pt-4 border-t border-white/10 flex flex-col gap-3">
-              <Link
-                href={LINKS.trial}
+              <TrialLink
+                source="header-mobile"
                 onClick={() => setIsMenuOpen(false)}
                 className="block text-center py-4 text-base font-semibold text-white rounded-xl"
                 style={{ background: 'linear-gradient(135deg, #6C63FF, #00D4FF)' }}
               >
-                Prova gratis 14 giorni
-              </Link>
+                Prova gratis 30 giorni
+              </TrialLink>
               <Link
                 href={LINKS.login}
                 onClick={() => setIsMenuOpen(false)}

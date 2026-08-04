@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 // components/Hero.tsx
 // Hero section principale: full viewport, sfere floating, mockup 3D, badge canali animati
@@ -7,6 +7,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import { LINKS } from '@/lib/constants'
+import { TrialLink } from '@/components/TrialLink'
 import { ProductMockup3D } from './ProductMockup3D'
 
 // Badge canali fluttuanti attorno al mockup
@@ -114,7 +115,7 @@ export const Hero = () => {
               style={{ color: '#A1A1AA' }}
             >
               Con Locario gestisci prenotazioni, clienti e richieste da Google, sito, social e campagne
-              in un unico sistema. Provalo gratis per 14 giorni e porta ordine nella tua attività.
+              in un unico sistema. Provalo gratis per 30 giorni e porta ordine nella tua attività.
             </motion.p>
 
             {/* CTA buttons */}
@@ -124,17 +125,17 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-wrap gap-3 mb-5 lg:mb-10"
             >
-              <Link
-                href={LINKS.trial}
+              <TrialLink
+                source="hero"
                 className="inline-flex items-center gap-2 px-7 py-4 text-base font-semibold text-white rounded-xl transition-all duration-200 hover:-translate-y-1"
                 style={{
                   background: 'linear-gradient(135deg, #6C63FF, #00D4FF)',
                   boxShadow: '0 8px 32px rgba(108, 99, 255, 0.4)',
                 }}
               >
-                Prova gratis 14 giorni
+                Prova gratis 30 giorni
                 <ArrowRight size={18} />
-              </Link>
+              </TrialLink>
               <Link
                 href={LINKS.login}
                 className="inline-flex items-center gap-2 px-7 py-4 text-base font-medium text-white rounded-xl transition-all duration-200"
@@ -154,7 +155,7 @@ export const Hero = () => {
               transition={{ duration: 0.5, delay: 0.45 }}
               className="flex flex-wrap items-center gap-6"
             >
-              {['Nessuna carta richiesta', 'Setup in 5 minuti', '14 giorni gratis'].map((badge) => (
+              {['Nessuna carta richiesta', 'Setup in 5 minuti', '30 giorni gratis'].map((badge) => (
                 <div key={badge} className="flex items-center gap-2">
                   <Check size={14} style={{ color: '#22C55E' }} />
                   <span className="text-sm" style={{ color: '#A1A1AA' }}>

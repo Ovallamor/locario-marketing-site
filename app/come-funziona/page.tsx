@@ -4,9 +4,9 @@ import type { Metadata } from 'next'
 import { generateMetadata as genMeta, buildHowToSchema } from '@/lib/seo'
 import { TrialCTA } from '@/components/TrialCTA'
 import { JsonLd } from '@/components/JsonLd'
-import Link from 'next/link'
+import { TrialLink } from '@/components/TrialLink'
 import { ArrowRight, Check } from 'lucide-react'
-import { LINKS, STEPS } from '@/lib/constants'
+import { STEPS } from '@/lib/constants'
 import {
   UserPlus,
   Settings,
@@ -186,8 +186,8 @@ export default function ComeFunzionaPage() {
           </div>
 
           <div className="mt-12">
-            <Link
-              href={LINKS.trial}
+            <TrialLink
+              source="come-funziona"
               className="inline-flex items-center gap-2 px-8 py-5 text-base font-bold text-white rounded-2xl"
               style={{
                 background: 'linear-gradient(135deg, #6C63FF, #00D4FF)',
@@ -195,7 +195,7 @@ export default function ComeFunzionaPage() {
               }}
             >
               Inizia gratis adesso <ArrowRight size={20} />
-            </Link>
+            </TrialLink>
           </div>
         </div>
       </section>

@@ -1,12 +1,11 @@
-'use client'
+﻿'use client'
 
 // components/TrialCTA.tsx
 // Sezione CTA finale con gradiente, sfere animate e trust badges
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
-import { LINKS } from '@/lib/constants'
+import { TrialLink } from '@/components/TrialLink'
 
 const trustBadges = ['Nessun obbligo', 'Setup in 5 minuti', 'Assistenza inclusa']
 
@@ -17,7 +16,11 @@ const spheres = [
   { size: 180, top: '40%', left: '30%', color: 'rgba(108, 99, 255, 0.08)', duration: 7 },
 ]
 
-export const TrialCTA = () => {
+interface TrialCTAProps {
+  source?: string
+}
+
+export const TrialCTA = ({ source = 'trial-cta-section' }: TrialCTAProps) => {
   return (
     <section
       className="section-padding relative overflow-hidden"
@@ -83,21 +86,21 @@ export const TrialCTA = () => {
 
           {/* Sottotitolo */}
           <p className="text-lg mb-10 max-w-lg mx-auto" style={{ color: '#A1A1AA' }}>
-            14 giorni di prova gratuita. Nessuna carta di credito richiesta. Cancella quando vuoi.
+            30 giorni di prova gratuita. Nessuna carta di credito richiesta. Cancella quando vuoi.
           </p>
 
           {/* CTA principale */}
-          <Link
-            href={LINKS.trial}
+          <TrialLink
+            source={source}
             className="inline-flex items-center gap-3 px-8 py-5 text-lg font-bold text-white rounded-2xl transition-all duration-200 hover:-translate-y-1 mb-8"
             style={{
               background: 'linear-gradient(135deg, #6C63FF, #00D4FF)',
               boxShadow: '0 8px 40px rgba(108, 99, 255, 0.5)',
             }}
           >
-            Prova Locario gratis per 14 giorni
+            Prova Locario gratis per 30 giorni
             <ArrowRight size={20} />
-          </Link>
+          </TrialLink>
 
           {/* Trust badges */}
           <div className="flex flex-wrap items-center justify-center gap-6">

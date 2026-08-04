@@ -1,4 +1,4 @@
-// app/prezzi/page.tsx
+﻿// app/prezzi/page.tsx
 
 import type { Metadata } from 'next'
 import { generateMetadata as genMeta, buildFAQSchema } from '@/lib/seo'
@@ -12,7 +12,7 @@ import type { FAQItem } from '@/lib/constants'
 export const metadata: Metadata = genMeta({
   title: 'Prezzi Locario | Piani e Tariffe Gestionale Prenotazioni',
   description:
-    'Scopri i piani di Locario. 14 giorni di prova gratuita su tutti i piani, nessuna carta richiesta. Scegli il piano giusto per la tua attività.',
+    'Scopri i piani di Locario. 30 giorni di prova gratuita su tutti i piani, nessuna carta richiesta. Scegli il piano giusto per la tua attività.',
   path: '/prezzi',
   keywords: [
     'prezzi gestionale prenotazioni',
@@ -24,7 +24,7 @@ export const metadata: Metadata = genMeta({
 })
 
 const includedInAll: string[] = [
-  '14 giorni di prova gratuita su tutti i piani',
+  '30 giorni di prova gratuita su tutti i piani',
   'Nessuna carta di credito per iniziare',
   'Agenda online e link prenotazione personalizzato',
   'Tracking canali di acquisizione',
@@ -48,7 +48,7 @@ const faqPrezzi: FAQItem[] = [
       'No. Il piano che scegli ha un prezzo fisso. Non ci sono aumenti automatici o sorprese in bolletta. Se in futuro i prezzi cambiano, i clienti esistenti mantengono le condizioni attuali.',
   },
   {
-    question: 'Cosa succede dopo i 14 giorni di prova gratuita?',
+    question: 'Cosa succede dopo i 30 giorni di prova gratuita?',
     answer:
       'Al termine della prova ti viene chiesto di scegliere un piano per continuare. Se non scegli nessun piano, l\'account viene sospeso automaticamente e non viene addebitato nulla. Nessuna sorpresa.',
   },
@@ -98,7 +98,7 @@ export default function PrezziPage() {
             </span>
           </h1>
           <p className="text-lg leading-relaxed max-w-xl mx-auto" style={{ color: '#A1A1AA' }}>
-            Inizia con 14 giorni di prova gratuita. Nessuna carta. Nessun vincolo. Scegli il piano
+            Inizia con 30 giorni di prova gratuita. Nessuna carta. Nessun vincolo. Scegli il piano
             solo se ti convince davvero.
           </p>
         </div>
