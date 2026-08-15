@@ -3,6 +3,7 @@
 import type { Metadata } from 'next'
 import { generateMetadata as genMeta, buildFAQSchema } from '@/lib/seo'
 import { TrialCTA } from '@/components/TrialCTA'
+import { BnbPricingCards } from '@/components/BnbPricingCards'
 import { FAQ } from '@/components/FAQ'
 import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
@@ -220,6 +221,9 @@ export default function GestionaleBnbPage() {
           </div>
         </div>
       </section>
+
+      {/* PREZZI B&B */}
+      <BnbPricingCards />
 
       {/* FAQ */}
       <FAQ items={faqBnb} title="Domande su B&B e case vacanza" />
