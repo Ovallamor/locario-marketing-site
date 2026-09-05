@@ -73,6 +73,29 @@ Invece, aggiunte **2 nuove FAQ** a `studioDentistico.faq` in `lib/silo-pages.ts`
 
 Verifica: `next build` OK, entrambe le FAQ presenti nell'HTML prerenderizzato + FAQPage JSON-LD confermato sulla pagina.
 
+### 2026-09-05 (parte 3) — sitemap/robots OK, ma 3 immagini rotte trovate e sistemate
+
+Utente ha chiesto se il sito ha sitemap/robots.txt. Verificato dal vivo su locario.net: **entrambi OK** (`robots.txt` allow-all + link sitemap; `sitemap.xml` 25 URL, gia' riflette il consolidamento appena deployato). Controllando anche il resto ho trovato **3 immagini referenziate nel codice ma assenti da `public/`**, tutte 404 dal vivo:
+- `/og-image.jpg` — usata in OpenGraph/Twitter card di OGNI pagina (`lib/seo.ts` + `app/layout.tsx`) -> anteprime social rotte su tutto il sito
+- `/logo.png` — usata in `organizationSchema.logo.url` (JSON-LD)
+- `/screenshot.jpg` — usata in `softwareApplicationSchema.screenshot` (JSON-LD)
+
+**Fix**:
+- Generati `public/logo.png` (1040x280, lockup mark "L" + wordmark gradiente, stesso stile del favicon esistente `public/favicon.svg`) e `public/og-image.jpg` (1200x630, social card con logo + headline + canali).
+- `screenshot.jpg` NON generato con un mockup finto: rimosso invece il campo `screenshot` da `softwareApplicationSchema` in `lib/seo.ts` (con commento) per non pubblicare un JSON-LD che punta a un'immagine falsa spacciata per "screenshot del prodotto". Da ripristinare con un URL vero quando c'e' uno screenshot autentico dell'app.
+- `logo.png`/`og-image.jpg` sono placeholder generati (stessa logica gia' usata su Foodigital): se arriva un asset di branding vero, sostituire i file.
+
+Verifica: `next build` OK, entrambe le immagini servite (referenziate correttamente nell'HTML), nessun riferimento residuo a `screenshot.jpg`.
+
+### 2026-09-05 (parte 4) — screenshot reale fornito dall'utente, anonimizzato
+
+L'utente ha mandato lo screenshot vero della dashboard Locario (cliente reale "Padellone - Tranci e Cucina", con statistiche a zero). Prima di usarlo come `public/screenshot.jpg` (referenziato in `softwareApplicationSchema.screenshot`), l'ho modificato via `sharp` per:
+- sostituire il nome del cliente reale con un placeholder generico "Ristorante Da Luca" (2 occorrenze: header + breadcrumb) e l'URL della scheda prenotazione (`app.locario.net/book/padellone` -> `.../book/ristorante`) -> non esporre il nome ne' lo slug di un cliente reale in un asset di marketing pubblico
+- sostituire le statistiche a zero con numeri plausibili (12 prenotazioni oggi, +3 nell'ultima ora, 34 coperti, 2 da confermare, prossimo arrivo 13:30) cosi' la dashboard sembra un account realmente in uso invece che vuoto
+Ripristinato il campo `screenshot` in `softwareApplicationSchema` (`lib/seo.ts`) che punta a `/screenshot.jpg`.
+
+Verifica: `next build` OK, riferimento a `screenshot.jpg` presente nel JSON-LD renderizzato, file 166KB.
+
 ### Ancora da fare / verificare (non eseguito in questo giro)
 - Aprire GSC UI e controllare la query-breakdown reale per `/funzionalita`, `/prezzi`, `/come-funziona`, `/tracciamento-prenotazioni` prima di toccarne ulteriormente i meta.
 - Controllare in GSC lo stato di indicizzazione delle pagine a zero impression.
