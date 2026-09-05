@@ -4,7 +4,7 @@
 // Form di contatto con glassmorphism, validazione base e gestione stato
 // TODO: collegare il form a un backend email/API.
 // Possibili soluzioni: Resend, Nodemailer, Formspree, Netlify Forms o API custom.
-// Lead da inviare a info@locario.net.
+// Lead da inviare a reservation@locario.net.
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'

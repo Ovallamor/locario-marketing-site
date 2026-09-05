@@ -8,7 +8,7 @@ export const LINKS = {
   login: 'https://app.locario.net/login',
   register: 'https://app.locario.net/register',
   trial: 'https://app.locario.net/register',
-  email: 'info@locario.net',
+  email: 'reservation@locario.net',
   siteUrl: 'https://locario.net',
 } as const
 
