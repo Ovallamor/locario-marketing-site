@@ -11,7 +11,7 @@ import { ArrowRight, X, Check } from 'lucide-react'
 import type { FAQItem } from '@/lib/constants'
 
 export const metadata: Metadata = genMeta({
-  title: 'Gestionale Prenotazioni Ristorante | Locario',
+  title: 'Gestionale Prenotazioni Ristorante',
   description:
     'Il gestionale delle prenotazioni per il tuo ristorante. Gestisci tavoli, turni e prenotazioni da Google, WhatsApp, Instagram in un unico sistema. Traccia i canali e riduci i no-show.',
   path: '/gestionale-prenotazioni-ristorante',
@@ -233,10 +233,7 @@ export default function GestionaleRistorantePage() {
             Approfondisci il silo ristoranti:
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-8">
-            <Link href="/software-prenotazioni-ristorante" className="text-sm" style={{ color: '#F59E0B' }}>
-              Software prenotazioni <ArrowRight size={12} className="inline" />
-            </Link>
-            <Link href="/prenotazioni-online-ristorante" className="text-sm" style={{ color: '#F59E0B' }}>
+            <Link href="/prenotazioni-online" className="text-sm" style={{ color: '#F59E0B' }}>
               Prenotazioni online <ArrowRight size={12} className="inline" />
             </Link>
             <Link href="/ridurre-no-show-ristorante" className="text-sm" style={{ color: '#F59E0B' }}>
@@ -244,6 +241,9 @@ export default function GestionaleRistorantePage() {
             </Link>
             <Link href="/prenotazioni-da-google-business-profile" className="text-sm" style={{ color: '#F59E0B' }}>
               Prenotazioni da Google <ArrowRight size={12} className="inline" />
+            </Link>
+            <Link href="/tracciamento-prenotazioni" className="text-sm" style={{ color: '#F59E0B' }}>
+              Tracciamento prenotazioni <ArrowRight size={12} className="inline" />
             </Link>
           </div>
           <p className="text-sm mb-4" style={{ color: '#A1A1AA' }}>

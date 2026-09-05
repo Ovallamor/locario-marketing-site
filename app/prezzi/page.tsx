@@ -10,7 +10,7 @@ import { Check } from 'lucide-react'
 import type { FAQItem } from '@/lib/constants'
 
 export const metadata: Metadata = genMeta({
-  title: 'Prezzi Locario | Piani e Tariffe Gestionale Prenotazioni',
+  title: 'Prezzi | Piani e Tariffe Gestionale Prenotazioni',
   description:
     'Scopri i piani di Locario. 30 giorni di prova gratuita su tutti i piani, nessuna carta richiesta. Scegli il piano giusto per la tua attività.',
   path: '/prezzi',

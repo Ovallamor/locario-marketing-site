@@ -17,7 +17,7 @@ import {
 import type { LucideIcon } from 'lucide-react'
 
 export const metadata: Metadata = genMeta({
-  title: 'Come Funziona Locario | Gestionale Prenotazioni in 5 Step',
+  title: 'Come Funziona | Gestionale Prenotazioni in 5 Step',
   description:
     'Scopri come funziona Locario in 5 semplici passi: crea account, configura attività, condividi il link, ricevi prenotazioni ordinate e analizza i risultati. Setup in 5 minuti.',
   path: '/come-funziona',

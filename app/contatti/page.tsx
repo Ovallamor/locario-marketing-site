@@ -10,7 +10,7 @@ import { Mail, Clock } from 'lucide-react'
 import { LINKS } from '@/lib/constants'
 
 export const metadata: Metadata = genMeta({
-  title: 'Contatti Locario | Parla con Noi',
+  title: 'Contatti | Parla con Noi',
   description:
     'Hai domande su Locario? Vuoi capire se è adatto alla tua attività? Scrivici. Rispondiamo entro 24 ore.',
   path: '/contatti',

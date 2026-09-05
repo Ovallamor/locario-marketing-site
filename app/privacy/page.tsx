@@ -5,7 +5,7 @@ import { generateMetadata as genMeta } from '@/lib/seo'
 import { LINKS } from '@/lib/constants'
 
 export const metadata: Metadata = genMeta({
-  title: 'Privacy Policy | Locario',
+  title: 'Privacy Policy',
   description:
     'Informativa sulla privacy di Locario. Come raccogliamo, utilizziamo e proteggiamo i tuoi dati personali in conformità al GDPR.',
   path: '/privacy',

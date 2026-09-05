@@ -86,6 +86,12 @@ const baseRoutes: MetadataRoute.Sitemap = [
     changeFrequency: 'yearly',
     priority: 0.3,
   },
+  {
+    url: 'https://locario.net/termini',
+    lastModified: new Date(),
+    changeFrequency: 'yearly',
+    priority: 0.3,
+  },
 ]
 
 const siloRoutes: MetadataRoute.Sitemap = Object.values(SILO_PAGES).map((page) => ({

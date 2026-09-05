@@ -34,15 +34,11 @@ const footerColumns = [
   {
     title: 'Soluzioni',
     links: [
-      { href: '/software-prenotazioni-ristorante', label: 'Software Ristoranti' },
-      { href: '/prenotazioni-online-ristorante', label: 'Prenotazioni Online Ristorante' },
       { href: '/ridurre-no-show-ristorante', label: 'Ridurre No-Show' },
       { href: '/gestire-prenotazioni-whatsapp', label: 'Prenotazioni WhatsApp' },
       { href: '/prenotazioni-da-google-business-profile', label: 'Prenotazioni da Google' },
       { href: '/link-prenotazione-online', label: 'Link Prenotazione' },
       { href: '/promemoria-prenotazioni', label: 'Promemoria' },
-      { href: '/agenda-online-parrucchieri', label: 'Agenda Parrucchieri' },
-      { href: '/agenda-online-centro-estetico', label: 'Agenda Centro Estetico' },
     ],
   },
   {

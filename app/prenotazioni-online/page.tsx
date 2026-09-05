@@ -9,7 +9,7 @@ import { TrialLink } from '@/components/TrialLink'
 import { ArrowRight, Clock, Smartphone, BarChart3 } from 'lucide-react'
 
 export const metadata: Metadata = genMeta({
-  title: 'Prenotazioni Online per la tua Attività | Locario',
+  title: 'Prenotazioni Online per la tua Attività',
   description:
     'Con Locario trasformi Google Business, Instagram, WhatsApp e il tuo sito in canali di prenotazione misurabili. Un link, tutti i canali tracciati. Prova gratis.',
   path: '/prenotazioni-online',
@@ -201,7 +201,6 @@ export default function PrenotazioniOnlinePage() {
           <div className="flex flex-wrap justify-center gap-3">
             {[
               { href: '/gestionale-prenotazioni-ristorante', label: 'Ristoranti e Pizzerie' },
-              { href: '/prenotazioni-online-ristorante', label: 'Prenotazioni Online Ristorante' },
               { href: '/gestire-prenotazioni-whatsapp', label: 'WhatsApp' },
               { href: '/prenotazioni-da-google-business-profile', label: 'Google Business' },
               { href: '/gestionale-prenotazioni-parrucchieri', label: 'Parrucchieri' },

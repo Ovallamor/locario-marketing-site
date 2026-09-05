@@ -11,7 +11,7 @@ import { ArrowRight, Check } from 'lucide-react'
 import type { FAQItem } from '@/lib/constants'
 
 export const metadata: Metadata = genMeta({
-  title: 'Tracciamento Prenotazioni | Scopri da Dove Arrivano i Clienti | Locario',
+  title: 'Tracciamento Prenotazioni | Da Dove Arrivano i Clienti',
   description:
     'Con Locario sai esattamente da dove arriva ogni prenotazione: Google, Instagram, WhatsApp, QR code o campagne. Smetti di indovinare, inizia a investire sui canali che funzionano.',
   path: '/tracciamento-prenotazioni',

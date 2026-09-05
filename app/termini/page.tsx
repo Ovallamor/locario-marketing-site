@@ -5,7 +5,7 @@ import { generateMetadata as genMeta } from '@/lib/seo'
 import { LINKS } from '@/lib/constants'
 
 export const metadata: Metadata = genMeta({
-  title: 'Termini di Servizio | Locario',
+  title: 'Termini di Servizio',
   description:
     'Termini e condizioni di utilizzo di Locario. Leggi i diritti e gli obblighi degli utenti della piattaforma di gestione prenotazioni.',
   path: '/termini',

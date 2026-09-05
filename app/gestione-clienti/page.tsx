@@ -7,7 +7,7 @@ import { TrialLink } from '@/components/TrialLink'
 import { ArrowRight, Check } from 'lucide-react'
 
 export const metadata: Metadata = genMeta({
-  title: 'Software Gestione Clienti per Attività Locali | Locario',
+  title: 'Software Gestione Clienti per Attività Locali',
   description:
     'Locario costruisce uno storico clienti strutturato per la tua attività: prenotazioni passate, preferenze, note, canale acquisizione. Fidelizza e personalizza il servizio.',
   path: '/gestione-clienti',

@@ -52,152 +52,6 @@ const ristoranteLinks: SiloLink[] = [
 ]
 
 export const SILO_PAGES = {
-  softwarePrenotazioniRistorante: {
-    key: 'softwarePrenotazioniRistorante',
-    path: '/software-prenotazioni-ristorante',
-    kicker: 'Software prenotazioni ristorante',
-    title: 'Software prenotazioni',
-    highlight: 'per ristoranti che vogliono ordine e dati',
-    description:
-      'Locario centralizza prenotazioni da sito, Google, Instagram e WhatsApp in una dashboard pensata per ristoranti. Gestisci tavoli, turni e fonti di acquisizione senza perdere il controllo del servizio.',
-    gradient: 'linear-gradient(135deg, #F59E0B, #6C63FF)',
-    accent: '#F59E0B',
-    shadow: 'rgba(245, 158, 11, 0.3)',
-    metadata: {
-      title: 'Software Prenotazioni Ristorante | Tavoli, Turni e Tracking',
-      description:
-        'Software prenotazioni ristorante per gestire tavoli, turni, richieste da Google, Instagram, WhatsApp e sito. Traccia i canali e riduci il caos operativo.',
-      keywords: [
-        'software prenotazioni ristorante',
-        'gestionale prenotazioni ristorante',
-        'software tavoli ristorante',
-        'programma prenotazioni ristorante',
-        'prenotazioni online ristorante',
-      ],
-    },
-    intent: 'Scegliere un software per gestire le prenotazioni del ristorante',
-    audience: 'Titolari e responsabili di ristoranti che ricevono prenotazioni da piu canali',
-    painTitle: 'Quando le prenotazioni arrivano da troppi posti',
-    solutionTitle: 'Un software unico per servizio, sala e marketing',
-    painPoints: [
-      'Telefonate, messaggi WhatsApp e richieste da Google arrivano nello stesso momento.',
-      'I tavoli vengono segnati su fogli diversi e gli errori emergono durante il servizio.',
-      'Non sai se i tavoli pieni arrivano da Google, Instagram, dal sito o dal passaparola.',
-      'I giorni deboli restano vuoti perche non hai dati utili per promuoverli.',
-    ],
-    solutionPoints: [
-      'Agenda prenotazioni unica, con tavoli, turni e disponibilita sempre aggiornati.',
-      'Link tracciati per ogni canale: Google, Instagram, WhatsApp, sito e campagne.',
-      'Dashboard chiara per capire quali canali portano coperti reali.',
-      'Storico clienti e note operative per gestire preferenze, allergie e richieste speciali.',
-    ],
-    proofTitle: 'Cosa deve fare un buon software prenotazioni ristorante',
-    proofItems: [
-      'Mostrare disponibilita reali prima che il cliente invii la richiesta.',
-      'Evitare sovrapposizioni tra turni, tavoli e gruppi numerosi.',
-      'Registrare la fonte della prenotazione senza lavoro manuale.',
-      'Rendere leggibili i dati a chi gestisce sala, marketing e proprieta.',
-    ],
-    related: [
-      ...ristoranteLinks,
-      {
-        href: '/ridurre-no-show-ristorante',
-        label: 'Ridurre no-show ristorante',
-        description: 'Promemoria e flussi piu chiari per diminuire assenze e tavoli vuoti.',
-      },
-    ],
-    faq: [
-      {
-        question: 'Locario e un software prenotazioni solo per ristoranti?',
-        answer:
-          'No. Locario funziona anche per pizzerie, parrucchieri, centri estetici e altre attivita locali. Questa pagina e dedicata al caso ristorante: tavoli, turni, gruppi e canali di acquisizione.',
-      },
-      {
-        question: 'Posso usare Locario insieme a Google Business Profile?',
-        answer:
-          'Si. Puoi inserire su Google Business Profile un link prenotazione tracciato. Quando un cliente prenota da quel link, Locario registra la fonte come Google.',
-      },
-      {
-        question: 'Il software aiuta anche con WhatsApp?',
-        answer:
-          'Si. Puoi usare un link dedicato per WhatsApp e portare le richieste dentro un flusso ordinato, evitando di gestire tutto dentro chat sparse.',
-      },
-    ],
-  },
-
-  prenotazioniOnlineRistorante: {
-    key: 'prenotazioniOnlineRistorante',
-    path: '/prenotazioni-online-ristorante',
-    kicker: 'Prenotazioni online ristorante',
-    title: 'Prenotazioni online',
-    highlight: 'per ristoranti sempre misurabili',
-    description:
-      'Trasforma sito, Google Business Profile, Instagram e WhatsApp in canali di prenotazione online per il tuo ristorante. Ogni link porta prenotazioni ordinate e dati sulla fonte.',
-    gradient: 'linear-gradient(135deg, #6C63FF, #00D4FF)',
-    accent: '#00D4FF',
-    shadow: 'rgba(0, 212, 255, 0.28)',
-    metadata: {
-      title: 'Prenotazioni Online Ristorante | Link Prenotazione Tracciato',
-      description:
-        'Prenotazioni online per ristoranti: link tracciati per sito, Google, Instagram e WhatsApp. Gestisci richieste, tavoli e fonti in un unico sistema.',
-      keywords: [
-        'prenotazioni online ristorante',
-        'link prenotazione ristorante',
-        'sistema prenotazioni online ristorante',
-        'prenotare tavolo online',
-        'prenotazioni ristorante da Google',
-      ],
-    },
-    intent: 'Attivare prenotazioni online per il ristorante senza perdere controllo operativo',
-    audience: 'Ristoratori che vogliono ricevere richieste anche fuori orario e misurarne la fonte',
-    painTitle: 'Il cliente vuole prenotare subito, non aspettare una risposta',
-    solutionTitle: 'Un link prenotazione per ogni canale importante',
-    painPoints: [
-      'Il cliente trova il ristorante su Google ma non vede un modo semplice per prenotare.',
-      'Instagram genera interesse ma la prenotazione si perde tra messaggi e risposte tardive.',
-      'WhatsApp resta comodo, ma diventa difficile capire quali richieste sono confermate.',
-      'Il sito porta visite, ma non sai quante diventano tavoli reali.',
-    ],
-    solutionPoints: [
-      'Link prenotazione online da usare su Google, sito, Instagram, QR code e WhatsApp.',
-      'Disponibilita e orari configurati dal ristorante, non lasciati al caso.',
-      'Fonte registrata automaticamente su ogni prenotazione.',
-      'Esperienza semplice per il cliente e dashboard ordinata per lo staff.',
-    ],
-    proofTitle: 'Dove mettere il link prenotazione tracciato',
-    proofItems: [
-      'Pulsante prenota su Google Business Profile e Google Maps.',
-      'Bio Instagram, storie in evidenza e campagne Meta.',
-      'Pulsante principale del sito web del ristorante.',
-      'Messaggio WhatsApp, QR code in sala e materiali locali.',
-    ],
-    related: [
-      ...ristoranteLinks,
-      {
-        href: '/prenotazioni-da-google-business-profile',
-        label: 'Prenotazioni da Google Business Profile',
-        description: 'Ottimizza il canale piu vicino alle ricerche locali ad alta intenzione.',
-      },
-    ],
-    faq: [
-      {
-        question: 'Le prenotazioni online sostituiscono il telefono?',
-        answer:
-          'Non per forza. Locario riduce le telefonate ripetitive e rende piu ordinati i canali digitali. Le prenotazioni telefoniche possono comunque essere inserite manualmente in dashboard.',
-      },
-      {
-        question: 'Posso usare un link diverso per Google e Instagram?',
-        answer:
-          'Si. Ogni canale puo avere il suo link tracciato, cosi la dashboard mostra quale fonte ha generato ogni prenotazione.',
-      },
-      {
-        question: 'I clienti devono scaricare una app?',
-        answer:
-          'No. Il cliente apre una pagina web, sceglie giorno, orario e dettagli richiesti dal ristorante. Non deve installare nulla.',
-      },
-    ],
-  },
-
   ridurreNoShowRistorante: {
     key: 'ridurreNoShowRistorante',
     path: '/ridurre-no-show-ristorante',
@@ -210,7 +64,7 @@ export const SILO_PAGES = {
     accent: '#EF4444',
     shadow: 'rgba(239, 68, 68, 0.25)',
     metadata: {
-      title: 'Ridurre No-Show Ristorante | Promemoria e Prenotazioni Ordinate',
+      title: 'Ridurre No-Show Ristorante | Promemoria Automatici',
       description:
         'Riduci i no-show nel ristorante con promemoria, prenotazioni online chiare e gestione ordinata delle conferme. Meno tavoli vuoti, piu controllo.',
       keywords: [
@@ -244,14 +98,7 @@ export const SILO_PAGES = {
       'Usare canali tracciati per capire dove avvengono piu no-show.',
       'Controllare storico e note cliente prima dei servizi piu pieni.',
     ],
-    related: [
-      ...ristoranteLinks,
-      {
-        href: '/software-prenotazioni-ristorante',
-        label: 'Software prenotazioni ristorante',
-        description: 'Il sistema centrale per tavoli, turni, canali e dati.',
-      },
-    ],
+    related: ristoranteLinks,
     faq: [
       {
         question: 'Locario elimina completamente i no-show?',
@@ -283,7 +130,7 @@ export const SILO_PAGES = {
     accent: '#25D366',
     shadow: 'rgba(37, 211, 102, 0.25)',
     metadata: {
-      title: 'Gestire Prenotazioni WhatsApp | Link Tracciato per Attivita Locali',
+      title: 'Gestire Prenotazioni WhatsApp | Link Tracciato',
       description:
         'Gestisci prenotazioni da WhatsApp con un link tracciato: meno chat confuse, piu richieste ordinate e fonte registrata in dashboard.',
       keywords: [
@@ -317,14 +164,7 @@ export const SILO_PAGES = {
       'Stato WhatsApp durante eventi, weekend o promozioni.',
       'Campagne locali dove WhatsApp resta il canale piu familiare.',
     ],
-    related: [
-      ...ristoranteLinks,
-      {
-        href: '/prenotazioni-online-ristorante',
-        label: 'Prenotazioni online ristorante',
-        description: 'Porta WhatsApp, Google e sito dentro lo stesso flusso prenotazioni.',
-      },
-    ],
+    related: ristoranteLinks,
     faq: [
       {
         question: 'Devo smettere di usare WhatsApp?',
@@ -356,7 +196,7 @@ export const SILO_PAGES = {
     accent: '#4285F4',
     shadow: 'rgba(66, 133, 244, 0.25)',
     metadata: {
-      title: 'Prenotazioni da Google Business Profile | Link Tracciato Locario',
+      title: 'Google Business Profile | Prenotazioni Tracciate',
       description:
         'Trasforma Google Business Profile in un canale di prenotazione misurabile. Usa un link tracciato e scopri quante prenotazioni arrivano da Google.',
       keywords: [
@@ -428,7 +268,7 @@ export const SILO_PAGES = {
     accent: '#F59E0B',
     shadow: 'rgba(245, 158, 11, 0.25)',
     metadata: {
-      title: 'Gestionale Prenotazioni Bar | Tavoli, Eventi e Link Online',
+      title: 'Gestionale Prenotazioni Bar | Tavoli ed Eventi',
       description:
         'Gestionale prenotazioni per bar, bistrot e locali: tavoli, aperitivi, eventi, link online e tracking dei canali da Google, Instagram e WhatsApp.',
       keywords: [
@@ -515,7 +355,7 @@ export const SILO_PAGES = {
     accent: '#22C55E',
     shadow: 'rgba(34, 197, 94, 0.25)',
     metadata: {
-      title: 'Gestionale Prenotazioni Agriturismo | Pranzi, Degustazioni, Eventi',
+      title: 'Gestionale Prenotazioni Agriturismo | Degustazioni',
       description:
         'Gestionale prenotazioni agriturismo per pranzi, cene, degustazioni ed eventi. Link online, promemoria e tracking da Google, sito e WhatsApp.',
       keywords: [
@@ -590,93 +430,6 @@ export const SILO_PAGES = {
     ],
   },
 
-  agendaOnlineParrucchieri: {
-    key: 'agendaOnlineParrucchieri',
-    path: '/agenda-online-parrucchieri',
-    kicker: 'Agenda online parrucchieri',
-    title: 'Agenda online',
-    highlight: 'per parrucchieri senza telefonate continue',
-    description:
-      'Con Locario il salone riceve appuntamenti online da Instagram, Google, sito e WhatsApp. Ogni operatore ha disponibilita chiare e ogni canale resta misurabile.',
-    gradient: 'linear-gradient(135deg, #6C63FF, #EC4899)',
-    accent: '#EC4899',
-    shadow: 'rgba(236, 72, 153, 0.25)',
-    metadata: {
-      title: 'Agenda Online Parrucchieri | Appuntamenti, Operatori e Reminder',
-      description:
-        'Agenda online per parrucchieri: appuntamenti da Instagram, Google, WhatsApp e sito, operatori separati, promemoria automatici e tracking canali.',
-      keywords: [
-        'agenda online parrucchieri',
-        'agenda online parrucchiere',
-        'appuntamenti online parrucchiere',
-        'software agenda parrucchieri',
-        'prenotazioni online salone parrucchiere',
-      ],
-    },
-    intent: 'Permettere ai clienti di prenotare appuntamenti dal telefono in un salone',
-    audience: 'Parrucchieri, saloni e team con piu operatori o richieste da social e WhatsApp',
-    painTitle: 'L agenda del salone non dovrebbe vivere solo al banco',
-    solutionTitle: 'Appuntamenti online con disponibilita sempre chiare',
-    painPoints: [
-      'I clienti scrivono mentre il team sta lavorando e le risposte arrivano in ritardo.',
-      'Ogni operatore ha orari, servizi e disponibilita diversi.',
-      'Instagram porta richieste, ma non sai quante diventano appuntamenti confermati.',
-      'Le cancellazioni dell ultimo minuto lasciano buchi difficili da riempire.',
-    ],
-    solutionPoints: [
-      'Pagina di prenotazione online per scegliere servizio, giorno e orario.',
-      'Disponibilita per operatore e servizi, con agenda sempre aggiornata.',
-      'Link tracciati per Instagram, Google, WhatsApp e sito del salone.',
-      'Promemoria automatici per ridurre dimenticanze e appuntamenti mancati.',
-    ],
-    proofTitle: 'Perche una agenda online aiuta il salone',
-    proofItems: [
-      'Riduce messaggi ripetitivi su orari e disponibilita.',
-      'Fa prenotare anche quando il salone e chiuso.',
-      'Mostra quali canali portano appuntamenti reali.',
-      'Rende piu leggibile il lavoro di operatori e servizi diversi.',
-    ],
-    related: [
-      {
-        href: '/gestionale-prenotazioni-parrucchieri',
-        label: 'Gestionale parrucchieri',
-        description: 'La pagina completa per saloni, operatori e servizi.',
-      },
-      {
-        href: '/gestionale-barber-shop',
-        label: 'Gestionale barber shop',
-        description: 'Prenotazioni online per barber e tagli rapidi.',
-      },
-      {
-        href: '/promemoria-prenotazioni',
-        label: 'Promemoria prenotazioni',
-        description: 'Reminder automatici per diminuire appuntamenti dimenticati.',
-      },
-      {
-        href: '/gestire-prenotazioni-whatsapp',
-        label: 'Prenotazioni WhatsApp',
-        description: 'Trasforma le chat in richieste ordinate.',
-      },
-    ],
-    faq: [
-      {
-        question: 'I clienti possono scegliere il servizio?',
-        answer:
-          'Si. Il salone puo configurare servizi, durate e disponibilita. Il cliente prenota online scegliendo le opzioni disponibili.',
-      },
-      {
-        question: 'Posso usare il link in bio Instagram?',
-        answer:
-          'Si. Puoi creare un link tracciato per Instagram e vedere quante prenotazioni arrivano da quel canale.',
-      },
-      {
-        question: 'Funziona con piu operatori?',
-        answer:
-          'Si. Locario e pensato per gestire operatori, disponibilita e servizi diversi nello stesso salone.',
-      },
-    ],
-  },
-
   gestionaleBarberShop: {
     key: 'gestionaleBarberShop',
     path: '/gestionale-barber-shop',
@@ -689,7 +442,7 @@ export const SILO_PAGES = {
     accent: '#00D4FF',
     shadow: 'rgba(0, 212, 255, 0.24)',
     metadata: {
-      title: 'Gestionale Barber Shop | Agenda Online e Prenotazioni Tracciate',
+      title: 'Gestionale Barber Shop | Agenda Online Tracciata',
       description:
         'Gestionale barber shop per appuntamenti online, operatori, taglio, barba, promemoria e tracking da Instagram, Google, WhatsApp e sito.',
       keywords: [
@@ -725,11 +478,6 @@ export const SILO_PAGES = {
     ],
     related: [
       {
-        href: '/agenda-online-parrucchieri',
-        label: 'Agenda online parrucchieri',
-        description: 'Un approfondimento per saloni e operatori.',
-      },
-      {
         href: '/gestionale-prenotazioni-parrucchieri',
         label: 'Gestionale parrucchieri',
         description: 'Gestione completa per saloni e team.',
@@ -764,93 +512,6 @@ export const SILO_PAGES = {
     ],
   },
 
-  agendaOnlineCentroEstetico: {
-    key: 'agendaOnlineCentroEstetico',
-    path: '/agenda-online-centro-estetico',
-    kicker: 'Agenda online centro estetico',
-    title: 'Agenda online',
-    highlight: 'per centri estetici, trattamenti e cabine',
-    description:
-      'Locario permette ai clienti di prenotare trattamenti online e al centro estetico di gestire durate, operatori, cabine e canali di acquisizione in modo ordinato.',
-    gradient: 'linear-gradient(135deg, #00D4FF, #22C55E)',
-    accent: '#00D4FF',
-    shadow: 'rgba(0, 212, 255, 0.24)',
-    metadata: {
-      title: 'Agenda Online Centro Estetico | Trattamenti, Cabine e Reminder',
-      description:
-        'Agenda online centro estetico per trattamenti, cabine, operatrici, promemoria e prenotazioni tracciate da Instagram, Google, WhatsApp e sito.',
-      keywords: [
-        'agenda online centro estetico',
-        'software agenda centro estetico',
-        'prenotazioni online centro estetico',
-        'agenda trattamenti estetici',
-        'gestionale appuntamenti centro estetico',
-      ],
-    },
-    intent: 'Far prenotare online trattamenti estetici mantenendo controllo su risorse e canali',
-    audience: 'Centri estetici, spa e saloni con servizi di durata diversa e clienti ricorrenti',
-    painTitle: 'Trattamenti, cabine e operatrici non sono un calendario semplice',
-    solutionTitle: 'Una agenda online costruita per appuntamenti complessi',
-    painPoints: [
-      'Ogni trattamento ha durata, preparazione e risorse diverse.',
-      'Cabine e operatrici devono essere disponibili nello stesso momento.',
-      'Le richieste da Instagram e WhatsApp non sempre diventano prenotazioni ordinate.',
-      'Promozioni e pacchetti sono difficili da misurare se il canale si perde.',
-    ],
-    solutionPoints: [
-      'Agenda online con servizi, durate e disponibilita configurabili.',
-      'Link tracciati per promozioni, social, Google e sito web.',
-      'Note cliente per preferenze, allergie e storico trattamenti.',
-      'Promemoria automatici per ridurre dimenticanze e conferme manuali.',
-    ],
-    proofTitle: 'Come usare i dati in un centro estetico',
-    proofItems: [
-      'Capire quali trattamenti ricevono piu richieste online.',
-      'Misurare promozioni stagionali e campagne social.',
-      'Vedere quali canali portano clienti nuovi o ricorrenti.',
-      'Ridurre telefonate su disponibilita, orari e conferme.',
-    ],
-    related: [
-      {
-        href: '/gestionale-prenotazioni-centro-estetico',
-        label: 'Gestionale centro estetico',
-        description: 'La pagina completa per trattamenti, cabine e clienti abituali.',
-      },
-      {
-        href: '/promemoria-prenotazioni',
-        label: 'Promemoria prenotazioni',
-        description: 'Riduci appuntamenti mancati e conferme manuali.',
-      },
-      {
-        href: '/link-prenotazione-online',
-        label: 'Link prenotazione online',
-        description: 'Usa link tracciati per social, Google e promozioni.',
-      },
-      {
-        href: '/gestire-prenotazioni-whatsapp',
-        label: 'Prenotazioni WhatsApp',
-        description: 'Ordina le richieste che arrivano in chat.',
-      },
-    ],
-    faq: [
-      {
-        question: 'Posso gestire trattamenti con durate diverse?',
-        answer:
-          'Si. Ogni servizio puo avere una durata specifica, cosi la disponibilita mostrata al cliente resta coerente con l agenda del centro.',
-      },
-      {
-        question: 'Posso tracciare una promozione Instagram?',
-        answer:
-          'Si. Puoi creare un link dedicato alla promozione e vedere quante prenotazioni arrivano da quel link.',
-      },
-      {
-        question: 'Locario salva note cliente?',
-        answer:
-          'Si. La scheda cliente puo contenere preferenze, storico, note operative e informazioni utili per il prossimo appuntamento.',
-      },
-    ],
-  },
-
   promemoriaPrenotazioni: {
     key: 'promemoriaPrenotazioni',
     path: '/promemoria-prenotazioni',
@@ -863,7 +524,7 @@ export const SILO_PAGES = {
     accent: '#EF4444',
     shadow: 'rgba(239, 68, 68, 0.24)',
     metadata: {
-      title: 'Promemoria Prenotazioni | Reminder Automatici per Clienti',
+      title: 'Promemoria Prenotazioni | Reminder Automatici',
       description:
         'Promemoria prenotazioni automatici per ridurre dimenticanze, no-show e conferme manuali. Ideale per ristoranti, saloni, barber e centri estetici.',
       keywords: [
@@ -904,12 +565,12 @@ export const SILO_PAGES = {
         description: 'Applicazione specifica ai tavoli e al servizio in sala.',
       },
       {
-        href: '/agenda-online-parrucchieri',
+        href: '/gestionale-prenotazioni-parrucchieri',
         label: 'Agenda parrucchieri',
         description: 'Reminder e agenda online per saloni con operatori.',
       },
       {
-        href: '/agenda-online-centro-estetico',
+        href: '/gestionale-prenotazioni-centro-estetico',
         label: 'Agenda centro estetico',
         description: 'Promemoria per trattamenti, cabine e appuntamenti.',
       },
@@ -950,7 +611,7 @@ export const SILO_PAGES = {
     accent: '#6C63FF',
     shadow: 'rgba(108, 99, 255, 0.28)',
     metadata: {
-      title: 'Link Prenotazione Online | Google, Instagram, WhatsApp e Sito',
+      title: 'Link Prenotazione Online per Ogni Canale',
       description:
         'Crea link prenotazione online tracciati per Google, Instagram, WhatsApp, sito e campagne. Ogni richiesta entra in dashboard con fonte misurabile.',
       keywords: [
@@ -1036,7 +697,7 @@ export const SILO_PAGES = {
     accent: '#14B8A6',
     shadow: 'rgba(20, 184, 166, 0.24)',
     metadata: {
-      title: 'Gestionale Prenotazioni Studio Dentistico | Agenda e Reminder',
+      title: 'Gestionale Prenotazioni Studio Dentistico | Agenda',
       description:
         'Gestionale prenotazioni per studio dentistico: agenda online, promemoria appuntamenti, richieste da Google e WhatsApp, tracking dei canali paziente.',
       keywords: [
@@ -1093,6 +754,16 @@ export const SILO_PAGES = {
       },
     ],
     faq: [
+      {
+        question: 'Come funziona l\'agenda online per uno studio dentistico?',
+        answer:
+          'Il paziente prenota da un link dedicato (sito, scheda Google, WhatsApp) scegliendo tra gli slot realmente disponibili. La richiesta entra in Locario gia ordinata, con fonte, orario e dati del paziente, senza passare dalla segreteria per ogni conferma.',
+      },
+      {
+        question: 'Come si gestisce l\'agenda di uno studio con piu dentisti o poltrone?',
+        answer:
+          'Ogni dentista o poltrona ha la propria disponibilita configurabile in Locario. Il paziente vede solo gli slot realmente liberi per il professionista o il trattamento scelto, e lo studio ha una vista unica su tutte le agende invece di doverle incrociare a mano.',
+      },
       {
         question: 'Locario va bene per uno studio dentistico?',
         answer:

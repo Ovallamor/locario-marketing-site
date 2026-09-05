@@ -9,7 +9,7 @@ import { ArrowRight, X, Check } from 'lucide-react'
 import { LINKS } from '@/lib/constants'
 
 export const metadata: Metadata = genMeta({
-  title: 'Gestionale Prenotazioni Centro Estetico e Spa | Locario',
+  title: 'Gestionale Prenotazioni Centro Estetico e Spa',
   description:
     'Il gestionale per centri estetici e spa: gestisci trattamenti, cabine, operatrici e clienti abituali in un sistema ordinato. Traccia i canali e misura le promozioni.',
   path: '/gestionale-prenotazioni-centro-estetico',

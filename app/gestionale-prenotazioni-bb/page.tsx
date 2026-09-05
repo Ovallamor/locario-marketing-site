@@ -12,7 +12,7 @@ import { ArrowRight, X, Check } from 'lucide-react'
 import type { FAQItem } from '@/lib/constants'
 
 export const metadata: Metadata = genMeta({
-  title: 'Gestionale Prenotazioni B&B e Case Vacanza | Locario',
+  title: 'Gestionale Prenotazioni B&B e Case Vacanza',
   description:
     'Il gestionale per B&B e case vacanza. Calendario unico con sync Airbnb e Booking.com, invio guidato Alloggiati Web e ROSS1000, check-in online, tassa di soggiorno e caparra incassabili online.',
   path: '/gestionale-prenotazioni-bb',

@@ -21,7 +21,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(LINKS.siteUrl),
   title: {
-    default: 'Locario | Gestionale Prenotazioni che Traccia i Canali di Acquisizione',
+    default: 'Locario | Gestionale Prenotazioni con Tracciamento Canali',
     template: '%s | Locario',
   },
   description:

@@ -13,7 +13,7 @@ import Link from 'next/link'
 import { ArrowRight, Users, BarChart3, Bell } from 'lucide-react'
 
 export const metadata: Metadata = genMeta({
-  title: 'Funzionalità Locario | Gestionale Prenotazioni Completo',
+  title: 'Funzionalità | Gestionale Prenotazioni Completo',
   description:
     'Scopri tutte le funzionalità di Locario: agenda online, tracking canali, gestione clienti, promemoria automatici e dashboard statistiche per attività locali.',
   path: '/funzionalita',

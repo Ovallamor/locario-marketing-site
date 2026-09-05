@@ -10,14 +10,14 @@ import { ArrowRight, X, Check } from 'lucide-react'
 import type { FAQItem } from '@/lib/constants'
 
 export const metadata: Metadata = genMeta({
-  title: 'Gestionale Prenotazioni Parrucchieri | Agenda Online Barber Shop | Locario',
+  title: 'Gestionale Prenotazioni Parrucchieri',
   description:
-    "L'agenda online per parrucchieri e barber shop. Gestisci operatori, orari e prenotazioni senza telefonate continue. Promemoria automatici, tracking canali. Prova gratis.",
+    "L'agenda online per parrucchieri e saloni. Gestisci operatori, orari e prenotazioni senza telefonate continue. Promemoria automatici, tracking canali. Prova gratis.",
   path: '/gestionale-prenotazioni-parrucchieri',
   keywords: [
     'agenda online parrucchiere',
     'software prenotazioni parrucchieri',
-    'gestionale barber shop',
+    'gestionale salone di parrucchieria',
     'prenotazioni online salone',
     'agenda parrucchiere digitale',
   ],

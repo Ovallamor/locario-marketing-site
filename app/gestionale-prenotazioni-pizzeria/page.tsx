@@ -9,7 +9,7 @@ import { ArrowRight, X, Check } from 'lucide-react'
 import { LINKS } from '@/lib/constants'
 
 export const metadata: Metadata = genMeta({
-  title: 'Gestionale Prenotazioni Pizzeria | Locario',
+  title: 'Gestionale Prenotazioni Pizzeria',
   description:
     'Il gestionale delle prenotazioni per la tua pizzeria. Gestisci sala e asporto, prenotazioni gruppi e il caos del venerdì sera. Traccia i canali e riempi i giorni deboli.',
   path: '/gestionale-prenotazioni-pizzeria',
