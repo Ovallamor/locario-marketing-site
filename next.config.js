@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['locario.net', 'app.locario.net'],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'locario.net' },
+      { protocol: 'https', hostname: 'app.locario.net' },
+    ],
   },
   // Abilita strict mode per React
   reactStrictMode: true,
