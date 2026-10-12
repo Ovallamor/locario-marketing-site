@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+      timezone: Europe/Rome
+    open-pull-requests-limit: 5
+    groups:
+      # Un solo PR al mese con gli aggiornamenti minori/patch, invece di uno per pacchetto.
+      minor-and-patch:
+        update-types: [minor, patch]
