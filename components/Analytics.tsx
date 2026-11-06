@@ -47,21 +47,21 @@ export function Analytics() {
         <div
           role="dialog"
           aria-label="Consenso cookie"
-          className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 rounded-2xl p-5"
+          className="fixed bottom-2 left-2 right-2 z-50 rounded-lg p-3 sm:bottom-4 sm:left-auto sm:right-6 sm:max-w-md sm:p-5"
           style={{
             background: '#0B1220',
             border: '1px solid rgba(255,255,255,0.1)',
             boxShadow: '0 12px 40px rgba(0,0,0,0.5)',
           }}
         >
-          <p className="text-sm leading-relaxed mb-4" style={{ color: '#D4D4D8' }}>
+          <p className="mb-3 text-xs leading-5 sm:mb-4 sm:text-sm sm:leading-relaxed" style={{ color: '#D4D4D8' }}>
             Usiamo cookie di analisi per capire come viene usato il sito e migliorarlo. Puoi accettarli o
             rifiutarli — la navigazione funziona comunque.{' '}
             <a href="/privacy" className="underline" style={{ color: '#00D4FF' }}>
               Privacy Policy
             </a>
           </p>
-          <div className="flex gap-3">
+          <div className="flex gap-2 sm:gap-3">
             <button
               onClick={() => choose('denied')}
               className="flex-1 py-2.5 rounded-lg text-sm font-medium transition-all duration-150"

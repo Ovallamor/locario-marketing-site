@@ -11,6 +11,7 @@ const footerColumns = [
     links: [
       { href: '/funzionalita', label: 'Funzionalità' },
       { href: '/prezzi', label: 'Prezzi' },
+      { href: '/sito-web-attivita-locali', label: 'Creazione Sito Web' },
       { href: '/come-funziona', label: 'Come Funziona' },
       { href: '/prenotazioni-online', label: 'Prenotazioni Online' },
       { href: '/tracciamento-prenotazioni', label: 'Tracciamento Canali' },

@@ -2,10 +2,6 @@
 
 // components/ContactForm.tsx
 // Form di contatto con glassmorphism, validazione base e gestione stato
-// TODO: collegare il form a un backend email/API.
-// Possibili soluzioni: Resend, Nodemailer, Formspree, Netlify Forms o API custom.
-// Lead da inviare a reservation@locario.net.
-
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Send } from 'lucide-react'
@@ -18,6 +14,7 @@ interface FormState {
   nomeAttivita: string
   tipoAttivita: string
   sitoWeb: string
+  interesse: string
   messaggio: string
   privacy: boolean
 }
@@ -30,6 +27,7 @@ const initialState: FormState = {
   nomeAttivita: '',
   tipoAttivita: '',
   sitoWeb: '',
+  interesse: '',
   messaggio: '',
   privacy: false,
 }
@@ -59,10 +57,13 @@ const inputFocusStyle = {
   background: 'rgba(108, 99, 255, 0.06)',
 }
 
-export const ContactForm = () => {
-  const [form, setForm] = useState<FormState>(initialState)
+export const ContactForm = ({ initialInterest = '' }: { initialInterest?: string }) => {
+  const [form, setForm] = useState<FormState>({ ...initialState, interesse: initialInterest })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [focusedField, setFocusedField] = useState<string | null>(null)
+  const [submitError, setSubmitError] = useState('')
+  const [submitted, setSubmitted] = useState(false)
+  const [websiteCompany, setWebsiteCompany] = useState('')
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -83,16 +84,22 @@ export const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-
-    // TODO: sostituire con chiamata API reale
-    console.log('Form data:', form)
-
-    // Simulazione invio
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-
-    alert('Grazie! Ti contatteremo presto a ' + form.email)
-    setForm(initialState)
-    setIsSubmitting(false)
+    setSubmitError('')
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, websiteCompany }),
+      })
+      const body = await response.json()
+      if (!response.ok) throw new Error(body.error || 'Invio non riuscito.')
+      setSubmitted(true)
+      setForm({ ...initialState, interesse: initialInterest })
+    } catch (cause) {
+      setSubmitError(cause instanceof Error ? cause.message : 'Invio non riuscito. Riprova.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -108,7 +115,11 @@ export const ContactForm = () => {
         backdropFilter: 'blur(12px)',
       }}
     >
-      <form onSubmit={handleSubmit} noValidate>
+      <form onSubmit={handleSubmit}>
+        <div className="absolute -left-[9999px]" aria-hidden="true">
+          <label htmlFor="websiteCompany">Sito aziendale</label>
+          <input id="websiteCompany" name="websiteCompany" value={websiteCompany} onChange={(event) => setWebsiteCompany(event.target.value)} tabIndex={-1} autoComplete="off" />
+        </div>
         {/* Nome + Cognome */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
           <div>
@@ -275,6 +286,30 @@ export const ContactForm = () => {
           />
         </div>
 
+        <div className="mb-5">
+          <label htmlFor="interesse" className="block text-sm font-medium text-white mb-2">
+            Servizio di interesse
+          </label>
+          <select
+            id="interesse"
+            name="interesse"
+            value={form.interesse}
+            onChange={handleChange}
+            onFocus={() => setFocusedField('interesse')}
+            onBlur={() => setFocusedField(null)}
+            className="w-full px-4 py-3 text-sm cursor-pointer"
+            style={getInputStyle('interesse')}
+          >
+            <option value="" style={{ background: '#0B1020' }}>Seleziona...</option>
+            <option value="Pacchetto Sito Web - 12 rate" style={{ background: '#0B1020' }}>Sito Web - 12 rate</option>
+            <option value="Pacchetto Sito Web - unica soluzione" style={{ background: '#0B1020' }}>Sito Web - unica soluzione</option>
+            <option value="Pacchetto Sito + Prenotazioni - 12 rate" style={{ background: '#0B1020' }}>Sito + Prenotazioni - 12 rate</option>
+            <option value="Pacchetto Sito + Prenotazioni - unica soluzione" style={{ background: '#0B1020' }}>Sito + Prenotazioni - unica soluzione</option>
+            <option value="Gestionale Locario" style={{ background: '#0B1020' }}>Gestionale Locario</option>
+            <option value="Altro" style={{ background: '#0B1020' }}>Altro</option>
+          </select>
+        </div>
+
         {/* Messaggio */}
         <div className="mb-6">
           <label
@@ -326,9 +361,11 @@ export const ContactForm = () => {
         </div>
 
         {/* Submit */}
+        {submitError && <p className="mb-4 rounded-lg border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200">{submitError}</p>}
+        {submitted && <p className="mb-4 rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3 text-sm text-emerald-200">Richiesta inviata. Ti ricontatteremo entro 24 ore lavorative.</p>}
         <button
           type="submit"
-          disabled={isSubmitting || !form.privacy}
+          disabled={isSubmitting || !form.privacy || submitted}
           className="w-full flex items-center justify-center gap-3 py-4 text-base font-semibold text-white rounded-xl transition-all duration-200 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
           style={{
             background: 'linear-gradient(135deg, #6C63FF, #00D4FF)',

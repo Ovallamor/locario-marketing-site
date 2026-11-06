@@ -17,7 +17,19 @@ export const metadata: Metadata = genMeta({
   keywords: ['contatti locario', 'assistenza gestionale prenotazioni', 'supporto locario'],
 })
 
-export default function ContattiPage() {
+export default async function ContattiPage({ searchParams }: { searchParams: Promise<{ servizio?: string; pagamento?: string }> }) {
+  const params = await searchParams
+  const service = params.servizio === 'sito-prenotazioni'
+    ? 'Pacchetto Sito + Prenotazioni'
+    : params.servizio === 'sito-web'
+      ? 'Pacchetto Sito Web'
+      : ''
+  const payment = params.pagamento === '12-rate'
+    ? '12 rate'
+    : params.pagamento === 'unica-soluzione'
+      ? 'unica soluzione'
+      : ''
+  const initialInterest = service && payment ? `${service} - ${payment}` : service
   return (
     <>
       <JsonLd schema={buildContactPageSchema()} />
@@ -150,7 +162,7 @@ export default function ContattiPage() {
 
             {/* Form */}
             <div className="lg:col-span-2">
-              <ContactForm />
+              <ContactForm initialInterest={initialInterest} />
             </div>
           </div>
         </div>

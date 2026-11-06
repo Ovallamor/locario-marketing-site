@@ -21,6 +21,12 @@ const baseRoutes: MetadataRoute.Sitemap = [
     priority: 0.9,
   },
   {
+    url: 'https://locario.net/sito-web-attivita-locali',
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.9,
+  },
+  {
     url: 'https://locario.net/tracciamento-prenotazioni',
     lastModified: new Date(),
     changeFrequency: 'monthly',
