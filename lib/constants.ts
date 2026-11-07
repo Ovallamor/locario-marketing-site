@@ -19,6 +19,7 @@ export const NAV_ITEMS = [
   { href: '/funzionalita', label: 'Funzionalità' },
   { href: '/prezzi', label: 'Prezzi' },
   { href: '/come-funziona', label: 'Come Funziona' },
+  { href: '/sito-web-attivita-locali', label: 'Siti Web' },
   { href: '/contatti', label: 'Contatti' },
 ] as const
 

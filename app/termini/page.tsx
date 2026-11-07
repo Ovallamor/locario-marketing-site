@@ -3,6 +3,7 @@
 import type { Metadata } from 'next'
 import { generateMetadata as genMeta } from '@/lib/seo'
 import { LINKS } from '@/lib/constants'
+import { LAST_LEGAL_UPDATE, LEGAL } from '@/lib/legal'
 
 export const metadata: Metadata = genMeta({
   title: 'Termini di Servizio',
@@ -11,7 +12,7 @@ export const metadata: Metadata = genMeta({
   path: '/termini',
 })
 
-const lastUpdated = '28 maggio 2025'
+const lastUpdated = LAST_LEGAL_UPDATE
 
 export default function TerminiPage() {
   return (
@@ -40,12 +41,19 @@ export default function TerminiPage() {
               integralmente i presenti Termini di Servizio. Se non accetti questi termini, non puoi utilizzare il Servizio.
             </p>
             <p>
-              Il Servizio è fornito da <strong className="text-white">Locario</strong>. Per qualsiasi
+              Il Servizio è fornito da <strong className="text-white">{LEGAL.name}</strong> (di seguito &quot;Locario&quot;). Per qualsiasi
               comunicazione scrivi a{' '}
               <a href={`mailto:${LINKS.email}`} className="underline hover:text-white transition-colors" style={{ color: '#6C63FF' }}>
                 {LINKS.email}
               </a>
               .
+              {(LEGAL.address || LEGAL.vatId) && (
+                <>
+                  {' '}
+                  {LEGAL.address && <>Sede: {LEGAL.address}. </>}
+                  {LEGAL.vatId && <>P. IVA {LEGAL.vatId}.</>}
+                </>
+              )}
             </p>
           </Section>
 
@@ -130,7 +138,7 @@ export default function TerminiPage() {
               <div>
                 <h3 className="font-semibold text-white mb-1">IVA</h3>
                 <p>
-                  I prezzi indicati sono al netto di IVA. L&apos;IVA viene applicata secondo la normativa fiscale italiana vigente.
+                  I prezzi degli abbonamenti al gestionale sono indicati al netto di IVA, che viene applicata secondo la normativa fiscale italiana vigente. Per il servizio di creazione siti web valgono le condizioni della sezione 7.
                 </p>
               </div>
               <div>
@@ -143,6 +151,9 @@ export default function TerminiPage() {
           </Section>
 
           <Section title="6. Cancellazione e rimborsi">
+            <p className="mb-4">
+              Le regole di questa sezione riguardano gli abbonamenti al gestionale. Per il servizio di creazione siti web valgono le condizioni della sezione 7.
+            </p>
             <div className="space-y-4">
               <div>
                 <h3 className="font-semibold text-white mb-1">Cancellazione da parte dell&apos;utente</h3>
@@ -165,7 +176,70 @@ export default function TerminiPage() {
             </div>
           </Section>
 
-          <Section title="7. Uso accettabile">
+          <Section title="7. Servizio di creazione siti web">
+            <p>
+              Oltre al gestionale, Locario realizza siti web per attività locali nei pacchetti descritti nella pagina{' '}
+              <a href="/sito-web-attivita-locali" className="underline hover:text-white transition-colors" style={{ color: '#6C63FF' }}>
+                Creazione sito web
+              </a>
+              . Questa sezione si applica agli ordini di quel servizio e prevale, per quel servizio, sulle regole degli altri articoli. L&apos;offerta è riservata a imprese e professionisti, che acquistano per scopi legati alla propria attività, e non è destinata ai consumatori. Il &quot;Cliente&quot; è chi effettua l&apos;ordine; il &quot;Sito&quot; è il sito web realizzato da Locario per il Cliente.
+            </p>
+            <div className="mt-4 space-y-4">
+              {[
+                {
+                  title: '7.1 Oggetto',
+                  text: 'Locario realizza, pubblica e mantiene online per 12 mesi un Sito per l’attività del Cliente, nel pacchetto scelto (Sito Web, Sito + Prenotazioni, Sito + Professional) come descritto nella pagina dedicata al momento dell’ordine. Il servizio comprende le pagine Home, Menu o Servizi e Contatti, l’adattamento per smartphone e computer, il caricamento iniziale dei contenuti forniti dal Cliente, una revisione prima della pubblicazione, la pubblicazione e 12 mesi di assistenza tecnica. I pacchetti con Locario includono anche la pagina di prenotazione e l’uso del gestionale, nei limiti del pacchetto scelto. Si tratta di una prestazione di servizi: non comporta la vendita o la cessione del Sito.',
+                },
+                {
+                  title: '7.2 Proprietà del Sito e licenza d’uso',
+                  text: 'Il Sito, compresi progetto grafico, struttura, codice, configurazioni e testi redatti da Locario, è e resta di proprietà esclusiva di Locario. Per tutta la durata del servizio il Cliente ha una licenza d’uso non esclusiva e non trasferibile, limitata allo svolgimento della propria attività. Alla scadenza senza rinnovo, o in caso di risoluzione, il Sito viene disattivato e non può essere copiato, trasferito o riutilizzato dal Cliente o da terzi.',
+                },
+                {
+                  title: '7.3 Contenuti del Cliente',
+                  text: 'Loghi, marchi, testi, fotografie, menu e ogni altro materiale forniti dal Cliente restano di sua proprietà. Il Cliente concede a Locario il diritto di utilizzarli per realizzare, pubblicare e mantenere il Sito per la durata del servizio, garantisce di averne la piena disponibilità e di non violare diritti di terzi, e tiene Locario indenne da pretese di terzi al riguardo. Alla fine del servizio Locario rimuove i contenuti dal Sito e, su richiesta scritta del Cliente entro 30 giorni dalla scadenza, ne restituisce una copia.',
+                },
+                {
+                  title: '7.4 Dominio',
+                  text: 'Il dominio già posseduto dal Cliente resta di sua proprietà: viene collegato al Sito e scollegato alla fine del servizio. Per i domini nuovi, titolarità e costi sono indicati nel preventivo prima della conferma.',
+                },
+                {
+                  title: '7.5 Prezzi, pagamento e fattura',
+                  text: 'I prezzi sono quelli indicati nel pacchetto scelto al momento dell’ordine e, per questo servizio, non è applicata l’IVA. Il pagamento avviene tramite Stripe, in un’unica soluzione con lo sconto indicato oppure in 12 rate mensili con impegno di 12 mesi: le rate sono dovute per l’intero periodo e l’abbonamento termina da solo dopo la dodicesima. In caso di mancato pagamento di una rata, dopo un sollecito Locario può sospendere il Sito fino alla regolarizzazione, restando dovute le rate. Per emettere la fattura serve la Partita IVA, richiesta durante l’ordine.',
+                },
+                {
+                  title: '7.6 Durata, scadenza e rinnovo',
+                  text: 'Il servizio dura 12 mesi dal pagamento e non si rinnova automaticamente. Locario ricorda la scadenza 20, 7, 3 e 1 giorno prima, con le condizioni per proseguire; il servizio continua solo con la conferma del Cliente. Senza conferma, alla scadenza il Sito viene disattivato secondo l’articolo 7.2.',
+                },
+                {
+                  title: '7.7 Avvio, realizzazione e revisione',
+                  text: 'Dopo il pagamento, entro 48 ore lavorative Locario avvia la lavorazione. Il Cliente collabora fornendo i materiali necessari: i ritardi nella consegna sospendono i tempi di realizzazione. Il Sito viene presentato al Cliente in una call prima della pubblicazione ed è inclusa una revisione. Modifiche ulteriori, pagine aggiuntive, produzioni fotografiche e testi estesi sono preventivati a parte.',
+                },
+                {
+                  title: '7.8 Nessuna garanzia di risultato',
+                  text: 'Locario si impegna a realizzare e mantenere il Sito con la diligenza richiesta, ma non garantisce un numero di visite, il posizionamento sui motori di ricerca, né un numero di prenotazioni, clienti o un incremento di fatturato, che dipendono anche da fattori esterni al servizio.',
+                },
+                {
+                  title: '7.9 Sospensione e risoluzione',
+                  text: 'Locario può sospendere o disattivare il Sito, con avviso quando possibile, in caso di contenuti illeciti o che violino diritti di terzi, di uso contrario ai presenti Termini o di mancato pagamento.',
+                },
+                {
+                  title: '7.10 Pacchetti con gestionale',
+                  text: 'Durante i 12 mesi l’uso di Locario nei pacchetti con gestionale è regolato anche dagli articoli dei presenti Termini su account, uso accettabile, disponibilità e responsabilità.',
+                },
+                {
+                  title: '7.11 Approvazione specifica delle clausole',
+                  text: 'Il Cliente dichiara di acquistare per scopi professionali e, ai sensi degli artt. 1341 e 1342 del Codice civile, di aver letto e di approvare specificamente le clausole: 7.2 (proprietà del Sito e licenza d’uso), 7.5 (impegno di 12 mesi e sospensione per mancato pagamento), 7.8 (nessuna garanzia di risultato), 7.9 (sospensione e risoluzione), articolo 12 (limitazione di responsabilità) e articolo 14 (legge applicabile e foro competente).',
+                },
+              ].map((item) => (
+                <div key={item.title}>
+                  <h3 className="font-semibold text-white mb-1">{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </Section>
+
+          <Section title="8. Uso accettabile">
             <p className="mb-4">L&apos;utente si impegna a non utilizzare il Servizio per:</p>
             <ul className="space-y-2 list-none">
               {[
@@ -184,7 +258,7 @@ export default function TerminiPage() {
             </ul>
           </Section>
 
-          <Section title="8. Proprietà intellettuale">
+          <Section title="9. Proprietà intellettuale">
             <p>
               Locario e tutti i suoi contenuti, design, logo, testi e software sono di proprietà esclusiva di Locario o dei
               suoi licenziatari e sono protetti da leggi sul diritto d&apos;autore e sulla proprietà intellettuale.
@@ -195,7 +269,7 @@ export default function TerminiPage() {
             </p>
           </Section>
 
-          <Section title="9. Dati e privacy">
+          <Section title="10. Dati e privacy">
             <p>
               Il trattamento dei dati personali è disciplinato dalla nostra{' '}
               <a href="/privacy" className="underline hover:text-white transition-colors" style={{ color: '#6C63FF' }}>
@@ -206,7 +280,7 @@ export default function TerminiPage() {
             </p>
           </Section>
 
-          <Section title="10. Disponibilità del servizio">
+          <Section title="11. Disponibilità del servizio">
             <p>
               Ci impegniamo a garantire la massima disponibilità della piattaforma. Tuttavia, non possiamo garantire un servizio ininterrotto al 100%. Possono verificarsi brevi interruzioni per manutenzione programmata (comunicata in anticipo) o eventi straordinari al di fuori del nostro controllo.
             </p>
@@ -215,7 +289,7 @@ export default function TerminiPage() {
             </p>
           </Section>
 
-          <Section title="11. Limitazione di responsabilità">
+          <Section title="12. Limitazione di responsabilità">
             <p>
               Nei limiti consentiti dalla legge applicabile, Locario non è responsabile per danni indiretti, incidentali, speciali o consequenziali derivanti dall&apos;utilizzo o dall&apos;impossibilità di utilizzo del Servizio, inclusi ma non limitati a: perdita di fatturato, perdita di dati, costi di sostituzione del servizio.
             </p>
@@ -224,7 +298,7 @@ export default function TerminiPage() {
             </p>
           </Section>
 
-          <Section title="12. Modifiche ai termini">
+          <Section title="13. Modifiche ai termini">
             <p>
               Ci riserviamo il diritto di modificare i presenti Termini in qualsiasi momento. In caso di modifiche sostanziali,
               ti avviseremo via email o tramite un avviso nella piattaforma con almeno <strong className="text-white">30 giorni</strong> di preavviso.
@@ -232,13 +306,13 @@ export default function TerminiPage() {
             </p>
           </Section>
 
-          <Section title="13. Legge applicabile e foro competente">
+          <Section title="14. Legge applicabile e foro competente">
             <p>
               I presenti Termini sono regolati dalla legge italiana. Per qualsiasi controversia derivante dall&apos;interpretazione o dall&apos;esecuzione dei presenti Termini, le parti concordano di tentare una risoluzione amichevole. In caso contrario, il foro competente esclusivo è quello del luogo di sede di Locario, salvo diversa disposizione di legge inderogabile.
             </p>
           </Section>
 
-          <Section title="14. Contatti">
+          <Section title="15. Contatti">
             <p>
               Per qualsiasi domanda relativa ai presenti Termini, contattaci a:{' '}
               <a href={`mailto:${LINKS.email}`} className="underline hover:text-white transition-colors" style={{ color: '#6C63FF' }}>
@@ -255,8 +329,9 @@ export default function TerminiPage() {
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  const id = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
   return (
-    <section>
+    <section id={id} className="scroll-mt-28">
       <h2 className="text-xl font-semibold text-white mb-4 pb-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
         {title}
       </h2>

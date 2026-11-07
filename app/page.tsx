@@ -13,6 +13,7 @@ import { TrackingSources } from '@/components/TrackingSources'
 import { IndustryCards } from '@/components/IndustryCards'
 import { FeatureCards } from '@/components/FeatureCards'
 import { PricingCards } from '@/components/PricingCards'
+import { WebsiteOfferBanner } from '@/components/WebsiteOfferBanner'
 import { FAQ } from '@/components/FAQ'
 import { TrialCTA } from '@/components/TrialCTA'
 import { FAQ_ITEMS } from '@/lib/constants'
@@ -254,6 +255,9 @@ export default function HomePage() {
 
       {/* 8. PRICING (sintetico) */}
       <PricingCards />
+
+      {/* 8b. OFFERTA SITI WEB */}
+      <WebsiteOfferBanner />
 
       {/* 9. FAQ (5 domande) */}
       <FAQ items={homeFAQ} limit={5} />

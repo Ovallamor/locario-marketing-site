@@ -3,6 +3,7 @@
 import type { Metadata } from 'next'
 import { generateMetadata as genMeta } from '@/lib/seo'
 import { LINKS } from '@/lib/constants'
+import { LAST_LEGAL_UPDATE, LEGAL } from '@/lib/legal'
 
 export const metadata: Metadata = genMeta({
   title: 'Privacy Policy',
@@ -11,7 +12,7 @@ export const metadata: Metadata = genMeta({
   path: '/privacy',
 })
 
-const lastUpdated = '28 maggio 2025'
+const lastUpdated = LAST_LEGAL_UPDATE
 
 export default function PrivacyPage() {
   return (
@@ -36,12 +37,19 @@ export default function PrivacyPage() {
 
           <Section title="1. Titolare del trattamento">
             <p>
-              Il titolare del trattamento dei dati personali è <strong className="text-white">Locario</strong>,
+              Il titolare del trattamento dei dati personali è <strong className="text-white">{LEGAL.name}</strong> (di seguito &quot;Locario&quot;),
               raggiungibile all&apos;indirizzo email{' '}
               <a href={`mailto:${LINKS.email}`} className="underline hover:text-white transition-colors" style={{ color: '#6C63FF' }}>
                 {LINKS.email}
               </a>
               .
+              {(LEGAL.address || LEGAL.vatId) && (
+                <>
+                  {' '}
+                  {LEGAL.address && <>Sede: {LEGAL.address}. </>}
+                  {LEGAL.vatId && <>P. IVA {LEGAL.vatId}.</>}
+                </>
+              )}
             </p>
           </Section>
 
@@ -50,6 +58,7 @@ export default function PrivacyPage() {
             <ul className="space-y-2 list-none">
               {[
                 'Dati di registrazione: nome, indirizzo email, nome dell\'attività.',
+                'Dati dell\'ordine del servizio Sito Web: nome del referente, email, telefono, nome e tipo di attività, indirizzo, Partita IVA, dominio già posseduto, note e preferenze inserite nel modulo, provenienza della richiesta ed eventuale commerciale di riferimento.',
                 'Dati di utilizzo: interazioni con la piattaforma, log di accesso, preferenze dell\'account.',
                 'Dati delle prenotazioni: informazioni sui clienti finali inserite dagli utenti del servizio.',
                 'Dati di pagamento: gestiti da processori terzi certificati PCI-DSS (Stripe). Non conserviamo i dati della carta.',
@@ -70,6 +79,14 @@ export default function PrivacyPage() {
                 {
                   title: 'Erogazione del servizio',
                   desc: 'Per creare e gestire il tuo account, fornire le funzionalità della piattaforma e rispondere alle richieste di supporto. Base giuridica: esecuzione del contratto (art. 6 par. 1 lett. b GDPR).',
+                },
+                {
+                  title: 'Ordini del servizio Sito Web',
+                  desc: 'Per gestire l\'ordine, realizzare e pubblicare il sito, inviarti le email del progetto (conferma, aggiornamenti, invito alla presentazione e promemoria di scadenza) e fornire assistenza. Base giuridica: esecuzione del contratto (art. 6 par. 1 lett. b GDPR).',
+                },
+                {
+                  title: 'Sicurezza e prevenzione degli abusi',
+                  desc: 'Per proteggere moduli e ordini da bot e utilizzi illeciti, tramite una verifica anti-bot (Cloudflare Turnstile) e limiti di richieste che trattano dati tecnici come indirizzo IP e informazioni sul browser. Base giuridica: legittimo interesse (art. 6 par. 1 lett. f GDPR).',
                 },
                 {
                   title: 'Obblighi legali e contabili',
@@ -104,6 +121,8 @@ export default function PrivacyPage() {
               {[
                 'Dati dell\'account: per tutta la durata del contratto e fino a 12 mesi dalla cancellazione.',
                 'Dati di fatturazione: 10 anni in conformità alla normativa fiscale italiana.',
+                'Ordini del servizio Sito Web mai pagati: cancellati automaticamente dopo 7 giorni.',
+                'Dati del progetto Sito Web: per la durata del servizio e fino a 12 mesi dalla sua conclusione.',
                 'Log tecnici: massimo 12 mesi.',
                 'Dati di marketing: fino alla revoca del consenso.',
               ].map((item) => (
@@ -124,7 +143,8 @@ export default function PrivacyPage() {
                 'Processori di pagamento (Stripe) per gestire le transazioni.',
                 'Provider di infrastruttura cloud per l\'hosting della piattaforma.',
                 'Strumenti di analisi (dati aggregati e anonimizzati).',
-                'Provider di email transazionali per notifiche di sistema.',
+                'Provider di email transazionali per notifiche di sistema e per le email del progetto.',
+                'Cloudflare (Turnstile) per la verifica anti-bot dei moduli.',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#6C63FF' }} />
