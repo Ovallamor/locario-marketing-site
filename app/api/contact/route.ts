@@ -17,11 +17,11 @@ function esc(value: string) {
 async function forwardToBrigata(lead: {
   nome: string; cognome: string; email: string; telefono: string; nomeAttivita: string
   tipoAttivita: string; sitoWeb: string; interesse: string; messaggio: string; page: string
-}) {
+}): Promise<boolean> {
   const url = process.env.BRIGATA_URL
   const key = process.env.BRIGATA_FORM_KEY
   const secret = process.env.BRIGATA_FORM_SECRET
-  if (!url || !key || !secret) return
+  if (!url || !key || !secret) return false
   try {
     const details = [
       lead.interesse && `Interesse: ${lead.interesse}`,
@@ -48,8 +48,10 @@ async function forwardToBrigata(lead: {
       signal: AbortSignal.timeout(5000),
     })
     if (!res.ok) console.error('[contact] Brigata ha risposto', res.status)
+    return res.ok
   } catch (cause) {
     console.error('[contact] Brigata non raggiungibile', cause instanceof Error ? cause.message : cause)
+    return false
   }
 }
 
@@ -91,9 +93,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Controlla i campi obbligatori e riprova.' }, { status: 422 })
   }
 
-  void forwardToBrigata({ nome, cognome, email, telefono, nomeAttivita, tipoAttivita, sitoWeb, interesse, messaggio, page: request.headers.get('referer') ?? `${expectedOrigin}/contatti` })
+  // Brigata crea il lead e manda l'email di benvenuto al visitatore. Se ha accettato la richiesta il contatto e al sicuro anche senza l'email interna.
+  const savedInBrigata = await forwardToBrigata({ nome, cognome, email, telefono, nomeAttivita, tipoAttivita, sitoWeb, interesse, messaggio, page: request.headers.get('referer') ?? `${expectedOrigin}/contatti` })
 
   const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey && savedInBrigata) return NextResponse.json({ ok: true })
   if (!apiKey) return NextResponse.json({ error: 'Invio temporaneamente non disponibile. Scrivi a reservation@locario.net.' }, { status: 503 })
 
   const response = await fetch('https://api.resend.com/emails', {
@@ -117,6 +121,7 @@ export async function POST(request: NextRequest) {
 
   if (!response.ok) {
     console.error('[contact] Resend error', response.status, await response.text())
+    if (savedInBrigata) return NextResponse.json({ ok: true })
     return NextResponse.json({ error: 'Invio non riuscito. Scrivi a reservation@locario.net.' }, { status: 502 })
   }
   return NextResponse.json({ ok: true })
