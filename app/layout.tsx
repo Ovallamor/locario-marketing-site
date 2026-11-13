@@ -3,6 +3,7 @@
 
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import '@/styles/globals.css'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
@@ -131,6 +132,16 @@ export default function RootLayout({
 
         {/* GA4 (dopo consenso) + banner cookie */}
         <Analytics />
+
+        {/* Chat commerciale (Brigata): compare solo se le due variabili sono impostate */}
+        {process.env.NEXT_PUBLIC_BRIGATA_URL && process.env.NEXT_PUBLIC_BRIGATA_CHAT_KEY && (
+          <Script
+            src={`${process.env.NEXT_PUBLIC_BRIGATA_URL}/chat-widget.js`}
+            data-key={process.env.NEXT_PUBLIC_BRIGATA_CHAT_KEY}
+            data-side="left"
+            strategy="lazyOnload"
+          />
+        )}
       </body>
     </html>
   )

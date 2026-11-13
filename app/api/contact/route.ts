@@ -1,3 +1,4 @@
+import { createHmac, randomUUID } from 'node:crypto'
 import { NextRequest, NextResponse } from 'next/server'
 
 const attempts = new Map<string, { count: number; resetAt: number }>()
@@ -8,6 +9,48 @@ function clean(value: unknown, max: number) {
 
 function esc(value: string) {
   return value.replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[character] ?? character)
+}
+
+// Inoltra la richiesta a Brigata (CRM commerciale): nasce il lead, parte l'email di benvenuto con il questionario e il link per fissare la call.
+// La richiesta e FIRMATA da qui (il segreto resta sul server, mai nel browser). Non deve MAI rompere il form: ogni errore viene ignorato
+// e l'email gia esistente verso reservation@locario.net parte comunque. Se le variabili non sono impostate non fa nulla.
+async function forwardToBrigata(lead: {
+  nome: string; cognome: string; email: string; telefono: string; nomeAttivita: string
+  tipoAttivita: string; sitoWeb: string; interesse: string; messaggio: string; page: string
+}) {
+  const url = process.env.BRIGATA_URL
+  const key = process.env.BRIGATA_FORM_KEY
+  const secret = process.env.BRIGATA_FORM_SECRET
+  if (!url || !key || !secret) return
+  try {
+    const details = [
+      lead.interesse && `Interesse: ${lead.interesse}`,
+      `Attività: ${lead.nomeAttivita} (${lead.tipoAttivita})`,
+      lead.sitoWeb && `Sito/social: ${lead.sitoWeb}`,
+      `Messaggio: ${lead.messaggio}`,
+    ].filter(Boolean).join('\n')
+    const raw = JSON.stringify({
+      name: `${lead.nome} ${lead.cognome}`.trim().slice(0, 120),
+      email: lead.email,
+      ...(lead.telefono ? { phone: lead.telefono.slice(0, 40) } : {}),
+      company: lead.nomeAttivita.slice(0, 160),
+      message: details.slice(0, 2000),
+      consent: true, // il modulo non parte senza la casella privacy
+      page: lead.page.slice(0, 300),
+      idempotencyKey: randomUUID(),
+    })
+    const t = Math.floor(Date.now() / 1000)
+    const v1 = createHmac('sha256', secret).update(`${t}.${raw}`).digest('hex')
+    const res = await fetch(`${url.replace(/\/$/, '')}/api/inbound/${encodeURIComponent(key)}`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'x-asp-signature': `t=${t},v1=${v1}` },
+      body: raw,
+      signal: AbortSignal.timeout(5000),
+    })
+    if (!res.ok) console.error('[contact] Brigata ha risposto', res.status)
+  } catch (cause) {
+    console.error('[contact] Brigata non raggiungibile', cause instanceof Error ? cause.message : cause)
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -47,6 +90,8 @@ export async function POST(request: NextRequest) {
   if (!nome || !cognome || !nomeAttivita || !tipoAttivita || !messaggio || !privacy || !/^\S+@\S+\.\S+$/.test(email)) {
     return NextResponse.json({ error: 'Controlla i campi obbligatori e riprova.' }, { status: 422 })
   }
+
+  void forwardToBrigata({ nome, cognome, email, telefono, nomeAttivita, tipoAttivita, sitoWeb, interesse, messaggio, page: request.headers.get('referer') ?? `${expectedOrigin}/contatti` })
 
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey) return NextResponse.json({ error: 'Invio temporaneamente non disponibile. Scrivi a reservation@locario.net.' }, { status: 503 })
