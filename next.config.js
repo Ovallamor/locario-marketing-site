@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  agentRules: false, // non generare/modificare AGENTS.md ad ogni avvio di next dev
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'locario.net' },
