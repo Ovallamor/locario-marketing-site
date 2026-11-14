@@ -139,6 +139,10 @@ export default function RootLayout({
             src={`${process.env.NEXT_PUBLIC_BRIGATA_URL}/chat-widget.js`}
             data-key={process.env.NEXT_PUBLIC_BRIGATA_CHAT_KEY}
             data-side="left"
+            data-color="#6C63FF"
+            data-color2="#2A8CFF"
+            data-theme="dark"
+            data-bg="#0B1020"
             strategy="lazyOnload"
           />
         )}
