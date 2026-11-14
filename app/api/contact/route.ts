@@ -17,11 +17,11 @@ function esc(value: string) {
 async function forwardToBrigata(lead: {
   nome: string; cognome: string; email: string; telefono: string; nomeAttivita: string
   tipoAttivita: string; sitoWeb: string; interesse: string; messaggio: string; page: string
-}): Promise<boolean> {
+}): Promise<'ok' | 'limit' | 'fail'> {
   const url = process.env.BRIGATA_URL
   const key = process.env.BRIGATA_FORM_KEY
   const secret = process.env.BRIGATA_FORM_SECRET
-  if (!url || !key || !secret) return false
+  if (!url || !key || !secret) return 'fail'
   try {
     const details = [
       lead.interesse && `Interesse: ${lead.interesse}`,
@@ -48,10 +48,11 @@ async function forwardToBrigata(lead: {
       signal: AbortSignal.timeout(5000),
     })
     if (!res.ok) console.error('[contact] Brigata ha risposto', res.status)
-    return res.ok
+    if (res.status === 429) return 'limit' // stesso indirizzo gia usato oggi: non e stato salvato nulla
+    return res.ok ? 'ok' : 'fail'
   } catch (cause) {
     console.error('[contact] Brigata non raggiungibile', cause instanceof Error ? cause.message : cause)
-    return false
+    return 'fail'
   }
 }
 
@@ -94,8 +95,10 @@ export async function POST(request: NextRequest) {
   }
 
   // Brigata crea il lead e manda l'email di benvenuto al visitatore. Se ha accettato la richiesta il contatto e al sicuro anche senza l'email interna.
-  const savedInBrigata = await forwardToBrigata({ nome, cognome, email, telefono, nomeAttivita, tipoAttivita, sitoWeb, interesse, messaggio, page: request.headers.get('referer') ?? `${expectedOrigin}/contatti` })
+  const brigata = await forwardToBrigata({ nome, cognome, email, telefono, nomeAttivita, tipoAttivita, sitoWeb, interesse, messaggio, page: request.headers.get('referer') ?? `${expectedOrigin}/contatti` })
 
+  if (brigata === 'limit') return NextResponse.json({ error: 'Hai già inviato una richiesta con questo indirizzo email: per oggi non puoi inviare altre richieste. Ti risponderemo a breve.' }, { status: 429 })
+  const savedInBrigata = brigata === 'ok'
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey && savedInBrigata) return NextResponse.json({ ok: true })
   if (!apiKey) return NextResponse.json({ error: 'Invio temporaneamente non disponibile. Scrivi a reservation@locario.net.' }, { status: 503 })
